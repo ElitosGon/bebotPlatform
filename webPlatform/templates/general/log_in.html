@@ -1,0 +1,130 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+
+{% block localcss %}
+	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
+
+{% endblock %}
+
+{% block localbody %}
+	 <div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Mi cuenta</h2>
+						<ol class="breadcrumb">
+							<li>
+								<a href="{% url 'home' %}"><i class="ti-home"></i> Home</a>
+							</li>
+							<li class="current">Mi cuenta</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content" class="my-account">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-6 cd-user-modal">
+					<div class="my-account-form">
+						<ul class="cd-switcher">
+						<li><a class="selected" href="{% url 'log_in' %}">LOGIN</a></li>
+						<li><a href="#">REGISTRO</a></li>
+						</ul>
+
+						<div id="cd-login" class="{% if status == None or status == 'login' %}is-selected{% endif %}">
+							<div class="page-login-form">
+								{% if messages and status == 'login' %}
+									{% for m in messages %}
+									<div class="alert alert-danger">{{m}}</div>
+									{% endfor %}
+								{% endif %}
+								<form role="form" class="login-form" method="post" id="login-form">
+									{% csrf_token %}
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-user"></i>
+											 {{form.username}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-lock"></i>
+											 {{form.password}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<button class="btn btn-common log-btn" name="event" value="login">Iniciar sesión</button>
+									<div class="checkbox-item">
+										<div class="checkbox">
+											<label for="rememberme" class="rememberme">
+											<input name="rememberme" id="rememberme" value="forever" type="checkbox">
+											<span class="checkbox-material">
+												<span class="check">
+													
+												</span>
+											</span> Recuerdame
+											</label>
+										</div>
+										<p class="cd-form-bottom-message">
+											<a href="#">¿Perdiste tu contraseña?</a></p>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div id="cd-signup">
+							<div class="page-login-form register">
+								<form role="form" class="login-form">
+									
+								</form>
+							</div>
+						</div>
+
+						<div class="page-login-form {% if status == 'recover' %}is-selected{% endif %}" id="cd-reset-password"> 
+							{% if messages and status == 'recover'%}
+								{% for m in messages %}
+								<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+								{% endfor %}
+							{% endif %}
+							<p class="cd-form-message">¿Perdiste tu contraseña? Por favor, introduzca su dirección de correo electrónico. Recibirás un enlace para crear una nueva contraseña.</p>
+							<form class="cd-form" method="post">	
+								{% csrf_token %}
+								<div class="form-group is-empty">
+									<div class="input-icon">
+										<i class="ti-email"></i>
+										<input id="sender-email" class="form-control" name="email" placeholder="Correo" type="text">
+									</div>
+									<span class="material-input"></span>
+								</div>
+								<p class="fieldset">
+								<button class="btn btn-common log-btn" type="submit" name="event" value="recover">Recuperar contraseña</button>
+								</p>						
+							</form>
+							<p class="cd-form-bottom-message"><a href="#0">Volver al inicio de sesión</a></p>
+						</div> 
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<a href="#" class="back-to-top" style="display: none;">
+		<i class="ti-arrow-up"></i>
+	</a>
+{% endblock %}
+
+{% block localscripts %}
+	<script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>   
+	<script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>    
+{% endblock %}
+
+

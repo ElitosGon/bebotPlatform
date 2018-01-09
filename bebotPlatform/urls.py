@@ -29,11 +29,10 @@ handler404 = 'webPlatform.views.error_views.page_not_found_view'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('', include('webPlatform.urls')),
-
     # Other views
     url(r'^i18n/', include(i18n)),
     url(r'^media/(?P<path>.*)$', serve , { 'document_root': settings.MEDIA_ROOT }),
     url(r'^static/(?P<path>.*)$', serve , { 'document_root':settings.STATIC_ROOT }),
 
+    path('', include('webPlatform.urls')),
 ]

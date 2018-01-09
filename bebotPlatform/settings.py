@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'django.contrib.humanize',
-
     'webPlatform'
 ]
 
@@ -142,3 +140,6 @@ LANGUAGES = [
     ('es', _('Spanish'))
 ]
 LOCALE_PATH = (os.path.join(BASE_DIR,'locale'))
+
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
