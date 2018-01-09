@@ -142,4 +142,11 @@ LANGUAGES = [
 LOCALE_PATH = (os.path.join(BASE_DIR,'locale'))
 
 # Email setting
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'BeBot.Project@gmail.com'
+EMAIL_HOST_PASSWORD = 'bebotproject'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SMTP_ENABLED = True  
+EMAIL_HOST_MEDGO = 'BeBot.Project@gmail.com'
