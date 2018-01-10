@@ -5,15 +5,20 @@ from django.contrib.auth.views import password_reset, password_reset_confirm, pa
 
 
 urlpatterns = [
-	# Home
+	# General
 	url(r'^$', general_views.home, name= "home"), 
+	
+	# Collaborator
+	url(r'^account/$', collaborator_views.my_account, name= "my_account"), 
+
+
+
 	url(r'^login/$', register_views.log_in, name= "log_in"), 
 	url(r'^logout/$', register_views.log_out, name= "log_out"), 
-      
-
     url(r'^password/reset/complete/$', password_reset_complete, {'template_name': 'registration/password_reset_complete.html' }, name='password_reset_complete'),
 	url(r'^password/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', password_reset_confirm, {'template_name': 'registration/password_reset_confirm.html'}, name='password_reset_confirm'),
 	
+
 
 
 ]

@@ -81,6 +81,11 @@
                     </li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right float-right">
+                    {% if user.is_authenticated %}
+                    <li class="right">
+                      <a href="{% url 'my_account' %}"><i class="ti-settings"></i>  Mi cuenta</a>
+                    </li>
+                    {% endif %}
                     <li class="right">
                       {% if not request.user.is_authenticated %}
                       <a href="{% url 'log_in' %}"><i class="ti-lock"></i>  Log In</a>
