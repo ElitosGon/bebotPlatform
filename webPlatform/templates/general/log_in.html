@@ -34,15 +34,15 @@
 				<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-6 cd-user-modal">
 					<div class="my-account-form">
 						<ul class="cd-switcher">
-						<li><a class="selected" href="{% url 'log_in' %}">LOGIN</a></li>
-						<li><a href="#">REGISTRO</a></li>
+							<li><a class="selected"0href="#0">LOGIN</a></li>
+							<li><a class="" href="#1">REGISTRO</a></li>
 						</ul>
 
 						<div id="cd-login" class="{% if status == None or status == 'login' %}is-selected{% endif %}">
 							<div class="page-login-form">
-								{% if messages and status == 'login' %}
+								{% if messages %}
 									{% for m in messages %}
-									<div class="alert alert-danger">{{m}}</div>
+									<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
 									{% endfor %}
 								{% endif %}
 								<form role="form" class="login-form" method="post" id="login-form">
@@ -50,14 +50,14 @@
 									<div class="form-group is-empty">
 										<div class="input-icon">
 											<i class="ti-user"></i>
-											 {{form.username}}
+											 {{form_log_in.username}}
 										</div>
 										<span class="material-input"></span>
 									</div>
 									<div class="form-group is-empty">
 										<div class="input-icon">
 											<i class="ti-lock"></i>
-											 {{form.password}}
+											 {{form_log_in.password}}
 										</div>
 										<span class="material-input"></span>
 									</div>
@@ -80,10 +80,71 @@
 							</div>
 						</div>
 
-						<div id="cd-signup">
-							<div class="page-login-form register">
-								<form role="form" class="login-form">
-									
+						<div id="cd-signup" class="{% if status == 'signup' %}is-selected{% endif %}">
+							<div class="page-login-form">
+								{% if messages and status == 'signup' %}
+									{% for m in messages %}
+									<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+									{% endfor %}
+								{% endif %}
+								{% if form_sign_up.errors %}
+								<div class="alert alert-danger">
+									{{form_sign_up.errors}}
+								</div>
+								{% endif %}
+								<form class="cd-form" method="post" enctype='multipart/form-data'>
+									{% csrf_token %}
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-user"></i>
+											{{form_sign_up.username}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-email"></i>
+											{{form_sign_up.email}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-lock"></i>
+											{{form_sign_up.password1}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											<i class="ti-lock"></i>
+											{{form_sign_up.password2}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<div class="input-icon">
+											{{form_sign_up.description}}
+										</div>
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group">
+										<div class="button-group">
+											<div class="action-buttons">
+												<div class="upload-button">
+													<button class="btn btn-common">Elige una imagen para tu perfil</button>
+													<input name="avatar" id="id_avatar" required="" type="file" onchange="readURL(this);">
+													<!-- Input -->
+												</div>
+											</div>
+										</div>
+											<img id="avatar" src="" width="240" style="margin: auto; display: block;"></img>
+									</div>
+									<!-- Catptcha -->
+									 <script src='https://www.google.com/recaptcha/api.js'></script>
+    								 <div class="g-recaptcha" data-sitekey="6LfuJEAUAAAAAJSsxCm90jzLG5_8Tra_Ie0yyVTd" style="width: 50%; margin: auto;"></div>
+									<br>
+									<button class="btn btn-common log-btn" name="event" value="signup">Registrar</button>	
 								</form>
 							</div>
 						</div>
@@ -125,6 +186,22 @@
 {% block localscripts %}
 	<script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>   
 	<script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>    
+	<script type="text/javascript">
+		function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+
+	            reader.onload = function (e) {
+	                $('#avatar')
+	                    .attr('src', e.target.result)
+	                    .width(240)
+	                    .height(240);
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	</script>
 {% endblock %}
 
 
