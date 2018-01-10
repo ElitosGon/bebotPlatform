@@ -1,0 +1,142 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+
+{% block localcss %}
+	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
+
+{% endblock %}
+
+{% block localbody %}
+	 <div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Mi cuenta</h2>
+						<ol class="breadcrumb">
+							<li>
+								<a href="{% url 'home' %}"><i class="ti-home"></i> Home</a>
+							</li>
+							<li class="current">Mi cuenta</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<!-- Laterar nav -->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="right-sideabr">
+						<div class="inner-box">
+							<h4>Mi cuenta</h4>
+							<ul class="lest item">
+							<li><a class="active" href="{% url 'my_account' %}">Mi perfil</a></li>
+							<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
+							<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<div class="job-alerts-item candidates">
+						<h3 class="alerts-title">Actualizar Perfil</h3>
+						<div class="row">
+							<div class="col-sm-12">
+								<form class="form-ad" method="post" enctype='multipart/form-data'>
+									{% csrf_token %}
+									<div class="divider">
+										<h3>Information Basica</h3>
+									</div>
+									{% if messages %}
+										{% for m in messages %}
+											<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+										{% endfor %}
+									{% endif %}
+									{% if user_form.errors or profile_form.errors%}
+										<div class="alert alert-danger">
+											{{user_form.errors}}
+											{{profile_form.errors}}
+										</div>
+									{% endif %}
+									
+									<div class="form-group is-empty">
+										<label class="control-label" for="textarea">Nombre Usuario</label>
+										{{user_form.username}}
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<label class="control-label" for="textarea">Nombre</label>
+										{{user_form.first_name}}
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<label class="control-label" for="textarea">Apellido</label>
+										{{user_form.last_name}}
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<label class="control-label" for="textarea">Email</label>
+										{{user_form.email}}
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group is-empty">
+										<label class="control-label" for="textarea">Descripción</label>
+										{{profile_form.description}}
+										<span class="material-input"></span>
+									</div>
+									<div class="form-group">
+										<div class="button-group">
+											<div class="action-buttons">
+												<div class="upload-button">
+													<button class="btn btn-common">Elige una imagen para tu perfil</button>
+													<input name="avatar" id="id_avatar" type="file" onchange="readURL(this);">
+												</div>
+											</div>
+										</div>
+											<img id="avatar" src="{{ profile.avatar.url }}" width="240" style="margin: auto; display: block;">
+									</div>
+									<br>
+									<button class="btn btn-common log-btn" name="event" value="update" type="sum">Actualizar</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a href="#" class="back-to-top" style="display: none;">
+		<i class="ti-arrow-up"></i>
+	</a>
+{% endblock %}
+
+{% block localscripts %}
+	<script type="text/javascript">
+		function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+
+	            reader.onload = function (e) {
+	                $('#avatar')
+	                    .attr('src', e.target.result)
+	                    .width(240)
+	                    .height(240);
+	            };
+
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+    </script>
+{% endblock %}
+
+

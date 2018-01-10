@@ -10,6 +10,8 @@ urlpatterns = [
 	
 	# Collaborator
 	url(r'^account/$', collaborator_views.my_account, name= "my_account"), 
+	url(r'^account/update/$', collaborator_views.my_account_update, name= "my_account_update"),
+	url(r'^account/change/password/$', collaborator_views.my_account_change_password, name= "my_account_change_password"), 
 
 
 

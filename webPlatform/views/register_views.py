@@ -13,8 +13,10 @@ from django.contrib.auth.views  import password_reset, password_reset_confirm
 from django.contrib.auth.forms import PasswordChangeForm
 from webPlatform.forms import register_forms
 from django.urls import reverse
+from django.db import transaction
 
 ####### Login #####################################
+@transaction.atomic
 def log_in(request):
 	storage = messages.get_messages(request)
 	storage.used = True
