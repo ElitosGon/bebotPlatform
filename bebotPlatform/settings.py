@@ -150,3 +150,10 @@ EMAIL_HOST_PASSWORD = 'bebotproject'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SMTP_ENABLED = True  
 EMAIL_HOST_MEDGO = 'BeBot.Project@gmail.com'
+
+# Images Avatar
+DJANGORESIZED_DEFAULT_KEEP_META = True
+DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
+
+# Google
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LfuJEAUAAAAAJdnw0LxAKSlMbhEeYt8ijfoUNyl'

@@ -16,15 +16,20 @@ from django.urls import reverse
 
 ####### Login #####################################
 def log_in(request):
+	storage = messages.get_messages(request)
+	storage.used = True
 	status = None
+	form_sign_up = register_forms.SignUpForm()
+	form_log_in = register_forms.LoginForm()
+
 	if request.user.is_authenticated:
 		return redirect('home')
 	if request.method == 'POST':
 
 		# BEGIN LOGIN 
 		if request.POST['event'] == 'login':
-			form = register_forms.LoginForm(request.POST)
-			if form.is_valid():
+			form_log_in = register_forms.LoginForm(request.POST)
+			if form_log_in.is_valid():
 				username = request.POST['username']
 				password = request.POST['password']		
 				if "@" in username:
@@ -62,8 +67,6 @@ def log_in(request):
 				try:
 					user = User.objects.get(email=email)
 					messages.add_message(request, messages.SUCCESS, 'Te hemos enviado por correo electrónico instrucciones para configurar tu contraseña.', extra_tags='recover')
-					form = register_forms.LoginForm()
-					contexto = { 'form':form , 'status': 'recover'}
 					password_reset(request, template_name="registration/log_in.html",
 									email_template_name="registration/password_reset_email.html", 
 									post_reset_redirect= reverse('log_in'))
@@ -72,10 +75,39 @@ def log_in(request):
 
 			# END RECOVER PASSWORD
 
+		if request.POST['event'] == 'signup':
+			# BEGIN SIGNUP
+			form_sign_up = register_forms.SignUpForm(request.POST, request.FILES or None)
+			if form_sign_up.is_valid():
+				try:
+					user = form_sign_up.save()
+					user.refresh_from_db()
+					user.profile.description = form_sign_up.cleaned_data.get('description')
+					user.profile.avatar = form_sign_up.cleaned_data.get('avatar')
+					user.save()
+					raw_password = form_sign_up.cleaned_data.get('password1')
+					user = authenticate(username=user.username, password=raw_password)
+					messages.add_message(request, messages.SUCCESS, "Usuario %s creado con exito." % user.username, extra_tags='login')
+					status = None
+					form_sign_up = register_forms.SignUpForm()
+					form_log_in = register_forms.LoginForm()
+					contexto = { 'form_log_in':form_log_in ,'form_sign_up': form_sign_up,'status': status}
+					return render(request, 'general/log_in.html', contexto , RequestContext(request))
+				except:
+					messages.add_message(request, messages.ERROR, "Problema al crear usuario.", extra_tags='signup')
+			else:
+				messages.add_message(request, messages.ERROR, "Problema al crear usuario.", extra_tags='signup')
+			# END SIGNUP
+
+		
 		status = request.POST['event']
 
-	form = register_forms.LoginForm()
-	contexto = { 'form':form , 'status': status}
+	contexto = { 
+				 'form_log_in':form_log_in ,
+				 'form_sign_up': form_sign_up,
+				 'status': status
+			    }
+
 	return render(request, 'general/log_in.html', contexto , RequestContext(request))
 
 ####### LogOut #####################################
@@ -83,6 +115,3 @@ def log_in(request):
 def log_out(request):
 	logout(request)
 	return redirect('home')
-
-
-
