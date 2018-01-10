@@ -39,7 +39,7 @@
 						<h4>Mi cuenta</h4>
 						<ul class="lest item">
 						<li><a class="active" href="{% url 'my_account' %}">Mi perfil</a></li>
-						<li><a href="#">Cambiar contraseña</a></li>
+						<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
 						<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
 						</ul>
 					</div>
@@ -49,13 +49,18 @@
 			<div class="col-md-8 col-sm-8 col-xs-12">
 				<div class="job-alerts-item candidates">
 					<h3 class="alerts-title">Infromación Perfil</h3>
+							{% if messages %}
+								{% for m in messages %}
+									<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+								{% endfor %}
+							{% endif %}
 						<div class="manager-resumes-item">
 							<div class="manager-content">
-								<a href="resume.html"><img class="resume-thumb" src="{{ user.profile.avatar.url }}" alt=""></a>
+								<img class="resume-thumb" src="{{ user.profile.avatar.url }}" alt="">
 								<div class="manager-info">
 									<div class="manager-name">
 										<h4>{{ user.username }}</h4>
-										<h5>{{user.first_name}} {{user.lastname}}</h5>
+										<h5>{{user.first_name}} {{user.last_name}}</h5>
 										<strong>correo: </strong>{{user.email}}
 									</div>
 									<div class="manager-meta">
@@ -73,7 +78,7 @@
 								{{user.profile.description}}
 							</div>
 						</div>
-						<a class="btn btn-common btn-sm" href="#">Actualizar</a>
+						<a class="btn btn-common btn-sm" href="{% url 'my_account_update' %}">Actualizar</a>
 						<a class="btn btn-common btn-sm" style="background-color: #f44336" href="#">Eliminar</a>
 					</div>
 				</div>
