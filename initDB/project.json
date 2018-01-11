@@ -1,0 +1,338 @@
+[
+{
+  "model": "webPlatform.project",
+  "pk": 1,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 2,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 3,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 4,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 5,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 6,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 7,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 8,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 9,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 10,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 11,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 12,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 13,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 14,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 15,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 16,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+}
+]

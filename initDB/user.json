@@ -1,0 +1,297 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$iazWYShzHxVV$BI+g+QaasIMfZPp3rqDV1AuVFpS6EVppwExEqEn1Mj8=",
+    "last_login": "2018-01-10T21:59:49.090",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "BeBot",
+    "last_name": "PROJECT",
+    "email": "elias.gonzalezma@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2018-01-08T13:54:55",
+    "groups": [],
+    "user_permissions": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      4,
+      5,
+      6,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user2@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user3@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user4@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user5",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user5@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user6",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user6@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user7",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user7@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user8",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user8@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user9",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user9@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user10",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user10@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user11",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user11@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user12",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user12@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user13",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user13@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user14",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user14@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user15",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user15@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

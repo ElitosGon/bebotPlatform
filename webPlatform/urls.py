@@ -8,6 +8,8 @@ urlpatterns = [
 	# General
 	url(r'^$', general_views.home, name= "home"), 
 	url(r'^collaborators/$', general_views.collaborators, name= "collaborators"), 
+	url(r'^collaborator/(?P<id>\d+)/$', general_views.collaborator, name= "collaborator"), 
+
 
 	# Collaborator
 	url(r'^account/$', collaborator_views.my_account, name= "my_account"), 

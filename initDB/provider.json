@@ -1,0 +1,450 @@
+[
+{
+  "model": "webPlatform.provider",
+  "pk": 1,
+  "fields": {
+    "name": "Microsoft Cognitive Services",
+    "description": "Infunda sus aplicaciones, sitios web y bots con algoritmos inteligentes para ver, escuchar, hablar, comprender e interpretar sus necesidades de usuario a trav\u00e9s de m\u00e9todos naturales de comunicaci\u00f3n. Transforme su negocio con AI hoy",
+    "in_library": true,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.provider",
+  "pk": 2,
+  "fields": {
+    "name": "IBM Watson",
+    "description": "Watson en IBM Cloud le permite integrar la IA m\u00e1s poderosa del mundo en su aplicaci\u00f3n y almacenar, entrenar y administrar sus datos en la nube m\u00e1s segura.",
+    "in_library": false,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 1,
+  "fields": {
+    "name": "Computer Vision API",
+    "description": "Destilar informaci\u00f3n procesable de im\u00e1genes",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 2,
+  "fields": {
+    "name": "Content Moderator",
+    "description": "Imagen automatizada, texto y moderaci\u00f3n de video",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 3,
+  "fields": {
+    "name": "Custom Vision Service",
+    "description": "Personalice f\u00e1cilmente sus propios modelos de visi\u00f3n por computadora de \u00faltima generaci\u00f3n para su caso de uso exclusivo",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 4,
+  "fields": {
+    "name": "Face API",
+    "description": "Detectar, identificar, analizar, organizar y etiquetar rostros en fotos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/face/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 5,
+  "fields": {
+    "name": "Emotion API",
+    "description": "Personalice las experiencias de los usuarios con el reconocimiento de emociones",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/emotion/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 6,
+  "fields": {
+    "name": "Video Indexer",
+    "description": "Desbloquear las estad\u00edsticas del video",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/video-indexer/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 7,
+  "fields": {
+    "name": "Translator Speech API",
+    "description": "Realice f\u00e1cilmente la traducci\u00f3n de voz en tiempo real con una simple llamada REST API",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/translator-speech-api/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 8,
+  "fields": {
+    "name": "Bing Speech API",
+    "description": "Convierta voz a texto y viceversa para comprender la intenci\u00f3n del usuario",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/speech/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 9,
+  "fields": {
+    "name": "Speaker Recognition API",
+    "description": "Use el habla para identificar y autenticar a los hablantes individuales",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 10,
+  "fields": {
+    "name": "Custom Speech Service",
+    "description": "Supere las barreras de reconocimiento de voz como el estilo de conversaci\u00f3n, el ruido de fondo y el vocabulario",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-speech-service/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 11,
+  "fields": {
+    "name": "Language Understanding (LUIS)",
+    "description": "Ense\u00f1e a sus aplicaciones a comprender los comandos de sus usuarios",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 12,
+  "fields": {
+    "name": "Bing Spell Check API",
+    "description": "Detecta y corrige errores de ortograf\u00eda en tu aplicaci\u00f3n",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 13,
+  "fields": {
+    "name": "Web Language Model API",
+    "description": "Utilice el poder de los modelos de lenguaje predictivo capacitados en datos de escala web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/web-language-model/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 14,
+  "fields": {
+    "name": "Text Analytics API",
+    "description": "Evaluar f\u00e1cilmente el sentimiento y los temas para comprender lo que los usuarios quieren",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 15,
+  "fields": {
+    "name": "Translator Text API",
+    "description": "Realice f\u00e1cilmente la traducci\u00f3n autom\u00e1tica con una simple llamada REST API",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 16,
+  "fields": {
+    "name": "Linguistic Analysis API",
+    "description": "Simplifique conceptos de lenguaje complejos y analice texto con la API de An\u00e1lisis Ling\u00fc\u00edstico",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/linguistic-analysis-api/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 17,
+  "fields": {
+    "name": "Recommendations API",
+    "description": "Predecir y recomendar art\u00edculos que sus clientes quieren",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/recommendations/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 18,
+  "fields": {
+    "name": "Knowledge Exploration Service",
+    "description": "Permitir experiencias de b\u00fasqueda interactiva sobre datos estructurados a trav\u00e9s de entradas de lenguaje natural",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/knowledge-exploration-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 19,
+  "fields": {
+    "name": "Entity Linking Intelligence Service API",
+    "description": "Potencia los enlaces de datos de su aplicaci\u00f3n con el reconocimiento de entidades nombradas y la desambiguaci\u00f3n",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/entity-linking-intelligence-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 20,
+  "fields": {
+    "name": "Academic Knowledge API",
+    "description": "Aproveche la riqueza del contenido acad\u00e9mico en el Microsoft Academic Graph",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/academic-knowledge/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 21,
+  "fields": {
+    "name": "QnA Maker API",
+    "description": "Destila la informaci\u00f3n en respuestas conversacionales y f\u00e1ciles de navegar",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 22,
+  "fields": {
+    "name": "Custom Decision Service",
+    "description": "Una API de toma de decisiones contextual basada en la nube que se agudiza con la experiencia",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-decision-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 23,
+  "fields": {
+    "name": "Bing Autosuggest API",
+    "description": "Dale a tu aplicaci\u00f3n opciones de autosugesti\u00f3n inteligente para b\u00fasquedas",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/autosuggest/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 24,
+  "fields": {
+    "name": "Bing News Search API",
+    "description": "Busque noticias y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-news-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 25,
+  "fields": {
+    "name": "Bing Web Search API",
+    "description": "Obtenga detalles de b\u00fasqueda mejorados de miles de millones de documentos web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 26,
+  "fields": {
+    "name": "Bing Entity Search API",
+    "description": "Enriquezca sus experiencias identificando y aumentando la informaci\u00f3n de la entidad de la web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-entity-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 27,
+  "fields": {
+    "name": "Bing Image Search API",
+    "description": "Busque im\u00e1genes y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 28,
+  "fields": {
+    "name": "Bing Video Search API",
+    "description": "Busque videos y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-video-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 29,
+  "fields": {
+    "name": "Bing Custom Search API",
+    "description": "Una herramienta de b\u00fasqueda de grado comercial, f\u00e1cil de usar y sin anuncios, que le permite entregar los resultados que desea",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-custom-search/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.source",
+  "pk": 1,
+  "fields": {
+    "name": "Github",
+    "description": "GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git",
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.source",
+  "pk": 2,
+  "fields": {
+    "name": "Bitbucket",
+    "description": "Bitbucket es un servicio de alojamiento basado en web, para los proyectos que utilizan el sistema de control de revisiones Mercurial y Git",
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+}
+]

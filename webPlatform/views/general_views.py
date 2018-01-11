@@ -22,12 +22,24 @@ def collaborators(request):
 		query = request.GET.get("search")
 		
 		if query:
-			collaborators = collaborators.filter(Q(user__first_name__icontains=query) & Q(user__last_name__icontains=query)).distinct()
+			collaborators = collaborators.filter(Q(user__first_name__icontains=query) & Q(user__username__icontains=query) & Q(user__last_name__icontains=query)).distinct()
 		
 		contexto = {
 			'collaborators' : collaborators
 		}
 
 		return render(request,'general/collaborators.html', contexto ,RequestContext(request))
+	else:
+		return Http404
+
+####### Collaborator Id ############################
+def collaborator(request, id):
+	if request.method == 'GET':
+		collaborator = models.Profile.objects.get(pk=id)
+		if collaborator:
+			contexto = {'collaborator': collaborator}
+			return render(request,'general/collaborator.html', contexto ,RequestContext(request))
+		else:
+			return Http404
 	else:
 		return Http404
