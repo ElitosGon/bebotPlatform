@@ -1,0 +1,150 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+
+{% block localcss %}
+
+{% endblock %}
+
+{% block localbody %}
+	<div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Colaborador</h2>
+						<ol class="breadcrumb">
+							<li><a href="{% url 'home' %}"><i class="ti-home"></i> Home</a></li>
+							<li class="current">Colaborador</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<aside id="sidebar" class="col-md-3 right-sidebar">
+					<div class="widget widget-categories">
+						<img src="{{collaborator.avatar.url}}" style="width: 100%">
+
+						<h3 class="">{{collaborator.user.first_name}} {{collaborator.user.last_name}}</h3>
+						<h4 class="widget-title"><a href="{% url 'collaborator' collaborator.pk %}">{{collaborator.user.username}}</a></h4>
+						<ul class="posts-list">
+							<li>
+								<div class="widget-content">
+									<a href="#">{{collaborator.description}}</a>
+									<span><i class="icon-calendar"></i> Activo desde el {{collaborator.created_at.date}}</span>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<div class="widget-content">
+									<span class="location"><i class="ti-heart"></i> Seguidores: {{collaborator.follows.all.count}} </span>
+									<span class="rate"><i class="ti-email"></i>{{collaborator.user.email}}</span>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+						
+					</div>
+				</aside>
+
+
+				<div class="col-md-9">
+					<h5 class="widget-title">Buscar proyecto</h5>
+					<div class="container">
+			          <div class="row">
+			            <div class="col-md-12">
+			              <div class="content">
+			                <form method="get" action="" id="form">
+			                  <div class="row">
+			                    <div class="col-md-4 col-sm-6">
+			                      <div class="form-group">
+			                        <input class="form-control" type="search" placeholder="Palabra clave" name="search">
+			                      </div>
+			                    </div>
+			                    <div class="col-md-4 col-sm-6">
+			                      <div class="search-category-container">
+			                        <label class="styled-select">
+			                          <select class="dropdown-product selectpicker" name="provider">
+			                            <option>Todos los proveedores</option>
+			                            <option>IBM</option>
+			                            <option>Microsoft</option>
+			                            <option>Google</option>
+			                          </select>
+			                        </label>
+			                      </div>
+			                    </div>
+			                    <div class="col-md-1 col-sm-6">
+			                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
+			                    </div>
+			                  </div>
+			                </form>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+					
+					{% for p in projects %}
+					<div class="job-list">
+		                <div class="job-list-content" style="margin-left: 0 !important;">
+		                  <div class="row">
+		                  	<div class="col-md-12"><h4><a href="">{{p.name}}</a></h4></div>
+		                  	<div class="col-md-12"><h4 class="widget-title"><span class="part-time">Tags</span></h4></div>
+		                  </div>
+		                  <p>{{p.description}}</p>
+		                  <div class="job-tag">
+		                    <div class="pull-left">
+		                      <div class="meta-tag">
+		                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
+		                       <span><i class="ti-time"></i>Actualización: {{p.created_at.date}}</span>
+		                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
+		                      </div>
+		                    </div>
+		                    <div class="pull-right">
+		                      {% if user.is_authenticated %}
+			                      <a href="{% url 'like_project' p.id %}">
+				                      <div class="icon">
+				                        <i class="ti-heart"></i>		                        
+				                      </div>
+			                      </a>
+		                      {% endif %}
+		                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+					{% endfor %}
+					
+
+					<ul class="pagination">
+						<li class="active"><a href="#" class="btn btn-common"><i class="ti-angle-left"></i> prev</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li class="active"><a href="#" class="btn btn-common">Next <i class="ti-angle-right"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				
+	
+	<a href="#" class="back-to-top" style="display: none;">
+		<i class="ti-arrow-up"></i>
+	</a>
+{% endblock %}
+
+{% block localscripts %}
+	
+{% endblock %}
+
+

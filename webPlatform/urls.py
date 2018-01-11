@@ -8,6 +8,8 @@ urlpatterns = [
 	# General
 	url(r'^$', general_views.home, name= "home"), 
 	url(r'^collaborators/$', general_views.collaborators, name= "collaborators"), 
+	url(r'^collaborator/(?P<id>\d+)/$', general_views.collaborator, name= "collaborator"), 
+
 
 	# Collaborator
 	url(r'^account/$', collaborator_views.my_account, name= "my_account"), 
@@ -15,6 +17,10 @@ urlpatterns = [
 	url(r'^account/change/password/$', collaborator_views.my_account_change_password, name= "my_account_change_password"), 
 	url(r'^account/delete/$', collaborator_views.my_account_delete, name= "my_account_delete"), 
 
+	url(r'^project/like/(?P<id>\d+)/$', collaborator_views.like_project, name="like_project"),
+	url(r'^project/unlike/(?P<id>\d+)/$', collaborator_views.unlike_project, name="unlike_project"),
+	url(r'^project/follow/(?P<id>\d+)/$', collaborator_views.follow_user, name="follow_user"),
+	url(r'^project/unfollow/(?P<id>\d+)/$', collaborator_views.unfollow_user, name="unfollow_user"),
 
 
 	url(r'^login/$', register_views.log_in, name= "log_in"), 

@@ -1,0 +1,2240 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "sites",
+    "model": "site"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "service"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "source"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "provider"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "webPlatform",
+    "model": "typetag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "vote",
+    "model": "vote"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "f0alc03qb7t1ex5f66j0ebxgwjks92b4",
+  "fields": {
+    "session_data": "N2M1MjQ5NDUyMTU1MTVmNDgzNzZiOWMwZGUwY2NhMDExZWVmNmIyNjp7fQ==",
+    "expire_date": "2018-01-24T11:40:54.292"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ks0cmq0bh471hrtuymo5bs66cqx2ajhd",
+  "fields": {
+    "session_data": "N2M1MjQ5NDUyMTU1MTVmNDgzNzZiOWMwZGUwY2NhMDExZWVmNmIyNjp7fQ==",
+    "expire_date": "2018-01-24T11:35:42.830"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mpeya6ythchk7q5bykhoojypbe9ei373",
+  "fields": {
+    "session_data": "ZDMzYWZjMmVkYmI0NmEyYjRhMmUyOTdhYmYzMWU4NzQ4MDAxMDk5Zjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiNjdjZTgyYmVjZWJhYjBkNGM3YThhMWJlNWQ0NjcxNmE3MjEyNDk2ZSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+    "expire_date": "2018-01-24T21:59:49.102"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "oe8uo0q4uiduaj9lfgop4v2w2fqxu2fq",
+  "fields": {
+    "session_data": "N2M1MjQ5NDUyMTU1MTVmNDgzNzZiOWMwZGUwY2NhMDExZWVmNmIyNjp7fQ==",
+    "expire_date": "2018-01-24T11:34:41.676"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xp9hs4o8iu5eukgbv8f8odw63upr9nkk",
+  "fields": {
+    "session_data": "N2M1MjQ5NDUyMTU1MTVmNDgzNzZiOWMwZGUwY2NhMDExZWVmNmIyNjp7fQ==",
+    "expire_date": "2018-01-23T16:13:16.754"
+  }
+},
+{
+  "model": "webPlatform.typetag",
+  "pk": 1,
+  "fields": {
+    "name": "ChatBot",
+    "description": "Define el tipo de Chatbot dentro de un contexto",
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.provider",
+  "pk": 1,
+  "fields": {
+    "name": "Microsoft Cognitive Services",
+    "description": "Infunda sus aplicaciones, sitios web y bots con algoritmos inteligentes para ver, escuchar, hablar, comprender e interpretar sus necesidades de usuario a trav\u00e9s de m\u00e9todos naturales de comunicaci\u00f3n. Transforme su negocio con AI hoy",
+    "in_library": true,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.provider",
+  "pk": 2,
+  "fields": {
+    "name": "IBM Watson",
+    "description": "Watson en IBM Cloud le permite integrar la IA m\u00e1s poderosa del mundo en su aplicaci\u00f3n y almacenar, entrenar y administrar sus datos en la nube m\u00e1s segura.",
+    "in_library": false,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.source",
+  "pk": 1,
+  "fields": {
+    "name": "Github",
+    "description": "GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git",
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.source",
+  "pk": 2,
+  "fields": {
+    "name": "Bitbucket",
+    "description": "Bitbucket es un servicio de alojamiento basado en web, para los proyectos que utilizan el sistema de control de revisiones Mercurial y Git",
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 1,
+  "fields": {
+    "name": "Computer Vision API",
+    "description": "Destilar informaci\u00f3n procesable de im\u00e1genes",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 2,
+  "fields": {
+    "name": "Content Moderator",
+    "description": "Imagen automatizada, texto y moderaci\u00f3n de video",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 3,
+  "fields": {
+    "name": "Custom Vision Service",
+    "description": "Personalice f\u00e1cilmente sus propios modelos de visi\u00f3n por computadora de \u00faltima generaci\u00f3n para su caso de uso exclusivo",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 4,
+  "fields": {
+    "name": "Face API",
+    "description": "Detectar, identificar, analizar, organizar y etiquetar rostros en fotos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/face/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 5,
+  "fields": {
+    "name": "Emotion API",
+    "description": "Personalice las experiencias de los usuarios con el reconocimiento de emociones",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/emotion/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 6,
+  "fields": {
+    "name": "Video Indexer",
+    "description": "Desbloquear las estad\u00edsticas del video",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/video-indexer/",
+    "category": "Vision",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 7,
+  "fields": {
+    "name": "Translator Speech API",
+    "description": "Realice f\u00e1cilmente la traducci\u00f3n de voz en tiempo real con una simple llamada REST API",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/translator-speech-api/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 8,
+  "fields": {
+    "name": "Bing Speech API",
+    "description": "Convierta voz a texto y viceversa para comprender la intenci\u00f3n del usuario",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/speech/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 9,
+  "fields": {
+    "name": "Speaker Recognition API",
+    "description": "Use el habla para identificar y autenticar a los hablantes individuales",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 10,
+  "fields": {
+    "name": "Custom Speech Service",
+    "description": "Supere las barreras de reconocimiento de voz como el estilo de conversaci\u00f3n, el ruido de fondo y el vocabulario",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-speech-service/",
+    "category": "Speech",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 11,
+  "fields": {
+    "name": "Language Understanding (LUIS)",
+    "description": "Ense\u00f1e a sus aplicaciones a comprender los comandos de sus usuarios",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 12,
+  "fields": {
+    "name": "Bing Spell Check API",
+    "description": "Detecta y corrige errores de ortograf\u00eda en tu aplicaci\u00f3n",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/spell-check/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 13,
+  "fields": {
+    "name": "Web Language Model API",
+    "description": "Utilice el poder de los modelos de lenguaje predictivo capacitados en datos de escala web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/web-language-model/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 14,
+  "fields": {
+    "name": "Text Analytics API",
+    "description": "Evaluar f\u00e1cilmente el sentimiento y los temas para comprender lo que los usuarios quieren",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 15,
+  "fields": {
+    "name": "Translator Text API",
+    "description": "Realice f\u00e1cilmente la traducci\u00f3n autom\u00e1tica con una simple llamada REST API",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 16,
+  "fields": {
+    "name": "Linguistic Analysis API",
+    "description": "Simplifique conceptos de lenguaje complejos y analice texto con la API de An\u00e1lisis Ling\u00fc\u00edstico",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/linguistic-analysis-api/",
+    "category": "Language",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 17,
+  "fields": {
+    "name": "Recommendations API",
+    "description": "Predecir y recomendar art\u00edculos que sus clientes quieren",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/recommendations/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 18,
+  "fields": {
+    "name": "Knowledge Exploration Service",
+    "description": "Permitir experiencias de b\u00fasqueda interactiva sobre datos estructurados a trav\u00e9s de entradas de lenguaje natural",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/knowledge-exploration-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 19,
+  "fields": {
+    "name": "Entity Linking Intelligence Service API",
+    "description": "Potencia los enlaces de datos de su aplicaci\u00f3n con el reconocimiento de entidades nombradas y la desambiguaci\u00f3n",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/entity-linking-intelligence-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 20,
+  "fields": {
+    "name": "Academic Knowledge API",
+    "description": "Aproveche la riqueza del contenido acad\u00e9mico en el Microsoft Academic Graph",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/academic-knowledge/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 21,
+  "fields": {
+    "name": "QnA Maker API",
+    "description": "Destila la informaci\u00f3n en respuestas conversacionales y f\u00e1ciles de navegar",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 22,
+  "fields": {
+    "name": "Custom Decision Service",
+    "description": "Una API de toma de decisiones contextual basada en la nube que se agudiza con la experiencia",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/custom-decision-service/",
+    "category": "Knowledge",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 23,
+  "fields": {
+    "name": "Bing Autosuggest API",
+    "description": "Dale a tu aplicaci\u00f3n opciones de autosugesti\u00f3n inteligente para b\u00fasquedas",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/autosuggest/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 24,
+  "fields": {
+    "name": "Bing News Search API",
+    "description": "Busque noticias y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-news-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 25,
+  "fields": {
+    "name": "Bing Web Search API",
+    "description": "Obtenga detalles de b\u00fasqueda mejorados de miles de millones de documentos web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 26,
+  "fields": {
+    "name": "Bing Entity Search API",
+    "description": "Enriquezca sus experiencias identificando y aumentando la informaci\u00f3n de la entidad de la web",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-entity-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 27,
+  "fields": {
+    "name": "Bing Image Search API",
+    "description": "Busque im\u00e1genes y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 28,
+  "fields": {
+    "name": "Bing Video Search API",
+    "description": "Busque videos y obtenga resultados completos",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-video-search-api/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.service",
+  "pk": 29,
+  "fields": {
+    "name": "Bing Custom Search API",
+    "description": "Una herramienta de b\u00fasqueda de grado comercial, f\u00e1cil de usar y sin anuncios, que le permite entregar los resultados que desea",
+    "url": "https://azure.microsoft.com/en-us/services/cognitive-services/bing-custom-search/",
+    "category": "Search",
+    "in_library": false,
+    "provider": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can add site",
+    "content_type": 7,
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can change site",
+    "content_type": 7,
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can delete site",
+    "content_type": 7,
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 8,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 8,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 8,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 9,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 9,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 9,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 10,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 10,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 10,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can add service",
+    "content_type": 11,
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can change service",
+    "content_type": 11,
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can delete service",
+    "content_type": 11,
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can add source",
+    "content_type": 12,
+    "codename": "add_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can change source",
+    "content_type": 12,
+    "codename": "change_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can delete source",
+    "content_type": 12,
+    "codename": "delete_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add project",
+    "content_type": 13,
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change project",
+    "content_type": 13,
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete project",
+    "content_type": 13,
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can add provider",
+    "content_type": 14,
+    "codename": "add_provider"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can change provider",
+    "content_type": 14,
+    "codename": "change_provider"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can delete provider",
+    "content_type": 14,
+    "codename": "delete_provider"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can add type tag",
+    "content_type": 15,
+    "codename": "add_typetag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can change type tag",
+    "content_type": 15,
+    "codename": "change_typetag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can delete type tag",
+    "content_type": 15,
+    "codename": "delete_typetag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can add vote",
+    "content_type": 16,
+    "codename": "add_vote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can change vote",
+    "content_type": 16,
+    "codename": "change_vote"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can delete vote",
+    "content_type": 16,
+    "codename": "delete_vote"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$iazWYShzHxVV$BI+g+QaasIMfZPp3rqDV1AuVFpS6EVppwExEqEn1Mj8=",
+    "last_login": "2018-01-10T21:59:49.090",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "BeBot",
+    "last_name": "PROJECT",
+    "email": "elias.gonzalezma@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2018-01-08T13:54:55",
+    "groups": [],
+    "user_permissions": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      4,
+      5,
+      6,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user2@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user3@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user4@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user5",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user5@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user6",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user6@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user7",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user7@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user8",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user8@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user9",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user9@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user10",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user10@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user11",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user11@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user12",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user12@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user13",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user13@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user14",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user14@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$100000$PPRVk5DhlEnr$EKvweytQRqutnZ2YWDt3R7Ds3h0Wruu1VNfAnAlvehU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user15",
+    "first_name": "User",
+    "last_name": "Test",
+    "email": "user15@usach.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-10T20:59:04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webPlatform.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Asistente Virtual",
+    "description": "ChatBot General",
+    "type_tag": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Seguridad",
+    "description": "ChatBot General",
+    "type_tag": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Call Center",
+    "description": "ChatBot General",
+    "type_tag": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Salud",
+    "description": "ChatBot General",
+    "type_tag": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 13,
+  "fields": {
+    "description": "Soy un tipo topo",
+    "avatar": "documents/avatar/2018/01/10/bb8.jpeg",
+    "user": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 15,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed, y que inviertan en mi formaci\u00f3n como profe",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 16,
+    "created_at": "2018-01-10T20:59:05.134",
+    "updated_at": "2018-01-11T14:13:22.740",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 16,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 2,
+    "created_at": "2018-01-11T14:13:22.554",
+    "updated_at": "2018-01-11T14:13:22.554",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 17,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 3,
+    "created_at": "2018-01-11T14:13:22.571",
+    "updated_at": "2018-01-11T14:13:22.581",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 18,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 4,
+    "created_at": "2018-01-11T14:13:22.592",
+    "updated_at": "2018-01-11T14:13:22.595",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 19,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 5,
+    "created_at": "2018-01-11T14:13:22.628",
+    "updated_at": "2018-01-11T14:13:22.629",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 20,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 6,
+    "created_at": "2018-01-11T14:13:22.638",
+    "updated_at": "2018-01-11T14:13:22.639",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 21,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 7,
+    "created_at": "2018-01-11T14:13:22.647",
+    "updated_at": "2018-01-11T14:13:22.649",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 22,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 8,
+    "created_at": "2018-01-11T14:13:22.657",
+    "updated_at": "2018-01-11T14:13:22.658",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 23,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 9,
+    "created_at": "2018-01-11T14:13:22.666",
+    "updated_at": "2018-01-11T14:13:22.668",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 24,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 10,
+    "created_at": "2018-01-11T14:13:22.676",
+    "updated_at": "2018-01-11T14:13:22.678",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 25,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 11,
+    "created_at": "2018-01-11T14:13:22.700",
+    "updated_at": "2018-01-11T14:13:22.700",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 26,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 12,
+    "created_at": "2018-01-11T14:13:22.707",
+    "updated_at": "2018-01-11T14:13:22.710",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 27,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 13,
+    "created_at": "2018-01-11T14:13:22.719",
+    "updated_at": "2018-01-11T14:13:22.721",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 28,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 14,
+    "created_at": "2018-01-11T14:13:22.731",
+    "updated_at": "2018-01-11T14:13:22.732",
+    "follows": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 1,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 2,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 3,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 4,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 5,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 6,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 7,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 8,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 9,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 10,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 11,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 12,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 13,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 14,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 15,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "webPlatform.project",
+  "pk": 16,
+  "fields": {
+    "vote_score": 0,
+    "num_vote_up": 0,
+    "num_vote_down": 0,
+    "name": "BeBot Test",
+    "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
+    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "is_public": true,
+    "number_likes": 0,
+    "user": 1,
+    "source": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-10T12:36:21.325",
+    "providers": [],
+    "services": [],
+    "tags": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2018-01-10T09:05:21.897",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "BeBot Platform",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2018-01-10T09:07:46.317",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"user_permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2018-01-10T11:42:47.679",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2018-01-10T11:43:14.024",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2018-01-10T11:50:45.368",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2018-01-10T11:53:27.700",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "angel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2018-01-10T11:53:27.722",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2018-01-10T11:57:31.983",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "angel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2018-01-10T11:57:31.992",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2018-01-10T12:02:37.833",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "9",
+    "object_repr": "angel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2018-01-10T12:02:37.850",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "8",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2018-01-10T12:07:18.731",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "11",
+    "object_repr": "angel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2018-01-10T12:07:18.738",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "10",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2018-01-10T12:17:06.154",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "12",
+    "object_repr": "12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2018-01-10T12:17:06.180",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2018-01-10T12:17:22.305",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "13",
+    "object_repr": "angel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2018-01-10T12:17:22.316",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "12",
+    "object_repr": "elitos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2018-01-10T13:53:02.643",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "13",
+    "object_repr": "13",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"user\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2018-01-10T13:53:12.902",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "14",
+    "object_repr": "topo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2018-01-10T21:48:20.172",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2018-01-10T21:49:17.427",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2018-01-10T21:49:51.711",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2018-01-10T21:50:18.514",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "14",
+    "object_repr": "14",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2018-01-11T10:57:02.199",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2018-01-11T10:57:32.084",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "16",
+    "object_repr": "elitos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+  }
+}
+]

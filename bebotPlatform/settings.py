@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'webPlatform'
+    'webPlatform',
+    'vote',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,4 @@ DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
 
 # Google
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LfuJEAUAAAAAJdnw0LxAKSlMbhEeYt8ijfoUNyl'
+
