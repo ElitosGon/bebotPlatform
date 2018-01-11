@@ -1,0 +1,76 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+
+{% block localcss %}
+
+{% endblock %}
+
+{% block localbody %}
+	<div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Colaboradores</h2>
+						<ol class="breadcrumb">
+							<li><a href="{% url 'home' %}"><i class="ti-home"></i> Home</a></li>
+							<li class="current">Colaboradores</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				
+				{% for c in collaborators %}
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="manager-resumes-item">
+						<div class="manager-content">
+							<a href="#"><img class="resume-thumb" src="{{c.avatar.url}}" alt=""></a>
+							<div class="manager-info">
+								<div class="manager-name">
+									<h4><a href="#">{{c.user.username}}</a></h4>
+									<h5>{{c.user.first_name}} {{c.user.last_name}}</h5>
+								</div>
+								<div class="manager-meta">
+									<span class="location"><i class="ti-location-pin"></i> Location</span>
+									<span class="rate">N° proyectos XXXX</span>
+								</div>
+							</div>
+						</div>
+						<div class="item-body">
+						{{c.description}}.
+							<!--
+							<div class="tag-list">
+								<span>HTML5</span>
+								<span>CSS3</span>
+								<span>Bootstrap</span>
+								<span>Wordpress</span>
+							</div>
+							-->
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+				
+	
+	<a href="#" class="back-to-top" style="display: none;">
+		<i class="ti-arrow-up"></i>
+	</a>
+{% endblock %}
+
+{% block localscripts %}
+	
+{% endblock %}
+
+

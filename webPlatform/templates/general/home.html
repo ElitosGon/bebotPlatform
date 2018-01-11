@@ -80,6 +80,13 @@
                       </a>
                     </li>
                   </ul>
+                  <ul class="nav navbar-nav">
+                    <li>
+                      <a class="active" href="{% url 'collaborators' %}">
+                      Colaboradores
+                      </a>
+                    </li>
+                  </ul>
                   <ul class="nav navbar-nav navbar-right float-right">
                     {% if user.is_authenticated %}
                     <li class="right">
@@ -101,6 +108,9 @@
               <ul class="wpb-mobile-menu">
                 <li>
                   <a class="active" href="{% url 'home' %}">Home</a>                      
+                </li>
+                <li>
+                  <a class="active" href="{% url 'collaborators' %}">Colaboradores</a>                      
                 </li>
                 <li class="btn-m">
                   {% if not request.user.is_authenticated %}

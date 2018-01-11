@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from webPlatform.forms import collaborator_forms
 from django.contrib.auth.models import User
 from django.db import transaction
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
 ####### My account #####################################
@@ -57,3 +57,13 @@ def my_account_change_password(request):
     else:
         form = collaborator_forms.PasswordChangeForm(request.user)
     return render(request, 'collaborator/my_account_change_password.html', {'form': form }, RequestContext(request))
+
+####### My account delete ####################
+@login_required
+@transaction.atomic
+def my_account_delete(request):
+    user = User.objects.get(pk=request.user.pk)
+    user.delete()
+    logout(request)
+    return redirect('home')
+
