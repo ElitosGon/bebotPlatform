@@ -37,7 +37,8 @@ def collaborator(request, id):
 	if request.method == 'GET':
 		collaborator = models.Profile.objects.get(pk=id)
 		if collaborator:
-			contexto = {'collaborator': collaborator}
+			projects = models.Project.objects.filter(user=collaborator.user.id).order_by('-updated_at')
+			contexto = {'collaborator': collaborator, 'projects': projects }
 			return render(request,'general/collaborator.html', contexto ,RequestContext(request))
 		else:
 			return Http404

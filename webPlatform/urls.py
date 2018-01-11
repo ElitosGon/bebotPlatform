@@ -17,6 +17,10 @@ urlpatterns = [
 	url(r'^account/change/password/$', collaborator_views.my_account_change_password, name= "my_account_change_password"), 
 	url(r'^account/delete/$', collaborator_views.my_account_delete, name= "my_account_delete"), 
 
+	url(r'^project/like/(?P<id>\d+)/$', collaborator_views.like_project, name="like_project"),
+	url(r'^project/unlike/(?P<id>\d+)/$', collaborator_views.unlike_project, name="unlike_project"),
+	url(r'^project/follow/(?P<id>\d+)/$', collaborator_views.follow_user, name="follow_user"),
+	url(r'^project/unfollow/(?P<id>\d+)/$', collaborator_views.unfollow_user, name="unfollow_user"),
 
 
 	url(r'^login/$', register_views.log_in, name= "log_in"), 

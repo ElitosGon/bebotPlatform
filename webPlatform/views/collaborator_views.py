@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.db import transaction
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.http import HttpResponseRedirect
 
 ####### My account #####################################
 @login_required
@@ -66,4 +67,39 @@ def my_account_delete(request):
     user.delete()
     logout(request)
     return redirect('home')
+
+####### Project likes ####################
+@login_required
+@transaction.atomic
+def like_project(request, id):
+    project = models.Project.objects.get(pk=id)
+    project.votes.up(request.user.id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+####### Project unlike ####################
+@login_required
+@transaction.atomic
+def unlike_project(request, id):
+    project = models.Project.objects.get(pk=id)
+    project.votes.delete(request.user.id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+####### Follow user ####################
+@login_required
+@transaction.atomic
+def follow_user(request, id):
+    user_followed = User.objects.get(pk=id)
+    user_following = User.objects.get(pk=request.user.id)
+    user_following.profile.follows.add(user_followed)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+####### Unfollow user ####################
+@login_required
+@transaction.atomic
+def unfollow_user(request, id):
+    user_followed = User.objects.get(pk=id)
+    user_following = User.objects.get(pk=request.user.id)
+    user_following.profile.follows.remove(user_followed)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 
