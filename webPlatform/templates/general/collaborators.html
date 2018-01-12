@@ -44,30 +44,41 @@
 	                  </div>
 	                </form>
 	              </div>
-	            </div>
 
-				{% for c in collaborators %}
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<div class="manager-resumes-item">
-						<div class="manager-content">
-							<a href="{% url 'collaborator' c.pk %}"><img class="resume-thumb" src="{{c.avatar.url}}" alt=""></a>
-							<div class="manager-info">
-								<div class="manager-name">
-									<h4><a href="{% url 'collaborator' c.pk %}">{{c.user.username}}</a></h4>
-									<h5>{{c.user.first_name}} {{c.user.last_name}}</h5>
-								</div>
-								<div class="manager-meta">
-									<span class="rate">Seguidores: {{c.follows.all.count}}</span>
-									<a class="btn btn-common btn-lm" href="{% url 'follow_user' c.id %}" style="background-color: #51d1fb">Seguir</a>
+	              <div class="infinite-container">
+					{% for c in collaborators %}
+						<dir class="infinite-item">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="manager-resumes-item">
+									<div class="manager-content">
+										<a href="{% url 'collaborator' c.pk %}"><img class="resume-thumb" src="{{c.avatar.url}}" alt=""></a>
+										<div class="manager-info">
+											<div class="manager-name">
+												<h4><a href="{% url 'collaborator' c.pk %}">{{c.user.username}}</a></h4>
+												<h5>{{c.user.first_name}} {{c.user.last_name}}</h5>
+											</div>
+											<div class="manager-meta">
+												<span class="rate">Seguidores: {{c.follows.all.count}}</span>
+												{% if user.is_authenticated and user != c.user %}
+												<a class="btn btn-common" href="{% url 'follow_user' c.id %}" style="background-color: #51d1fb;">Seguir</a>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+									<div class="item-body">
+									{{c.description}}.
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="item-body">
-						{{c.description}}.
-						</div>
+						</dir>
+					{% endfor %}
 					</div>
-				</div>
-				{% endfor %}
+
+					{% if collaborators.has_next %}
+						  <a class="infinite-more-link" href="?page={{ collaborators.next_page_number }}">More</a>
+					{% endif %}
+					
+	            </div>
 			</div>
 		</div>
 	</div>
@@ -76,10 +87,18 @@
 	<a href="#" class="back-to-top" style="display: none;">
 		<i class="ti-arrow-up"></i>
 	</a>
+
 {% endblock %}
 
 {% block localscripts %}
-	
+	 <script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>
+	 <script type="text/javascript" src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+	 <script type="text/javascript" src="{% static 'assets/js/infinite.js' %}"></script>	 
+	 <script>
+	    var infinite = new Waypoint.Infinite({
+	      element: $('.infinite-container')[0]
+	    });
+	  </script>
 {% endblock %}
 
 

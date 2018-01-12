@@ -7,6 +7,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.conf import settings
 from django.http import Http404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 ####### HOME #####################################
 def home(request):
@@ -24,10 +25,17 @@ def collaborators(request):
 		if query:
 			collaborators = collaborators.filter(Q(user__first_name__icontains=query) & Q(user__username__icontains=query) & Q(user__last_name__icontains=query)).distinct()
 		
-		contexto = {
-			'collaborators' : collaborators
-		}
+		page = request.GET.get('page', 1)
+		paginator = Paginator(collaborators, 5)
 
+		try:
+			collaborators = paginator.page(page)
+		except PageNotAnInteger:
+			collaborators = paginator.page(1)
+		except EmptyPage:
+			collaborators = paginator.page(paginator.num_pages)
+
+		contexto = {'collaborators' : collaborators}
 		return render(request,'general/collaborators.html', contexto ,RequestContext(request))
 	else:
 		return Http404
@@ -37,7 +45,28 @@ def collaborator(request, id):
 	if request.method == 'GET':
 		collaborator = models.Profile.objects.get(pk=id)
 		if collaborator:
+			query = request.GET.get("search")
+			provider = request.GET.get("provider")
 			projects = models.Project.objects.filter(user=collaborator.user.id).order_by('-updated_at')
+			
+			if query:
+				projects = projects.filter(Q(name__icontains=query) &
+										   Q(description__icontains=query) & 
+										   Q(source__name__icontains=query) &
+										   Q(source__description__icontains=query)).distinct()
+			if provider != '0' and provider != None:
+				projects = projects.filter(providers__id=provider).distinct()
+			
+			page = request.GET.get('page', 1)
+			paginator = Paginator(projects, 5)
+
+			try:
+				projects = paginator.page(page)
+			except PageNotAnInteger:
+				projects = paginator.page(1)
+			except EmptyPage:
+				projects = paginator.page(paginator.num_pages)
+
 			contexto = {'collaborator': collaborator, 'projects': projects }
 			return render(request,'general/collaborator.html', contexto ,RequestContext(request))
 		else:
