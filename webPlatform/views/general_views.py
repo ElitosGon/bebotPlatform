@@ -23,7 +23,9 @@ def collaborators(request):
 		query = request.GET.get("search")
 		
 		if query:
-			collaborators = collaborators.filter(Q(user__first_name__icontains=query) & Q(user__username__icontains=query) & Q(user__last_name__icontains=query)).distinct()
+			collaborators = collaborators.filter(Q(user__first_name__icontains=query) |
+												 Q(user__username__icontains=query) | 
+												 Q(user__last_name__icontains=query)).distinct()
 		
 		page = request.GET.get('page', 1)
 		paginator = Paginator(collaborators, 5)
@@ -35,8 +37,8 @@ def collaborators(request):
 		except EmptyPage:
 			collaborators = paginator.page(paginator.num_pages)
 
-		contexto = {'collaborators' : collaborators}
-		return render(request,'general/collaborators.html', contexto ,RequestContext(request))
+		context = {'collaborators' : collaborators}
+		return render(request,'general/collaborators.html', context ,RequestContext(request))
 	else:
 		return Http404
 
@@ -50,10 +52,13 @@ def collaborator(request, id):
 			projects = models.Project.objects.filter(user=collaborator.user.id).order_by('-updated_at')
 			
 			if query:
-				projects = projects.filter(Q(name__icontains=query) &
-										   Q(description__icontains=query) & 
-										   Q(source__name__icontains=query) &
-										   Q(source__description__icontains=query)).distinct()
+				projects = projects.filter(Q(name__icontains=query) |
+										   Q(description__icontains=query) |
+										   Q(source__name__icontains=query) |
+										   Q(providers__name__icontains=query) |
+										   Q(services__name__icontains=query) |
+										   Q(tags__name__icontains=query)).distinct()
+
 			if provider != '0' and provider != None:
 				projects = projects.filter(providers__id=provider).distinct()
 			
@@ -67,8 +72,8 @@ def collaborator(request, id):
 			except EmptyPage:
 				projects = paginator.page(paginator.num_pages)
 
-			contexto = {'collaborator': collaborator, 'projects': projects }
-			return render(request,'general/collaborator.html', contexto ,RequestContext(request))
+			context = {'collaborator': collaborator, 'projects': projects }
+			return render(request,'general/collaborator.html', context ,RequestContext(request))
 		else:
 			return Http404
 	else:

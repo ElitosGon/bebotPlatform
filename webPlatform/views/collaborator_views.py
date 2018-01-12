@@ -13,6 +13,7 @@ from django.db import transaction
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 ####### My account #####################################
 @login_required
@@ -102,4 +103,38 @@ def unfollow_user(request, id):
     user_following.profile.follows.remove(user_followed)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+####### Own Projects
+@login_required
+def my_projects(request):
+    if request.method == 'GET':
+        query = request.GET.get("search")
+        provider = request.GET.get("provider")
+        projects = models.Project.objects.filter(user=request.user.id).order_by('-updated_at')
 
+        if query:
+                projects = projects.filter(Q(name__icontains=query) |
+                                           Q(description__icontains=query) |
+                                           Q(source__name__icontains=query) |
+                                           Q(providers__name__icontains=query) |
+                                           Q(services__name__icontains=query) |
+                                           Q(tags__name__icontains=query)).distinct()
+
+        if provider != '0' and provider != None:
+            projects = projects.filter(providers__id=provider).distinct()
+
+        if projects:
+            page = request.GET.get('page', 1)
+            paginator = Paginator(projects, 5)
+
+            try:
+                projects = paginator.page(page)
+            except PageNotAnInteger:
+                projects = paginator.page(1)
+            except EmptyPage:
+                projects = paginator.page(paginator.num_pages)
+
+            return render(request,'collaborator/my_projects.html', {'projects': projects} , RequestContext(request))
+
+        return render(request,'collaborator/my_projects.html', None , RequestContext(request))
+    else:
+        return render(request,'error/404.html', None, RequestContext(request))

@@ -626,6 +626,17 @@
   }
 },
 {
+  "model": "vote.vote",
+  "pk": 2,
+  "fields": {
+    "user_id": 1,
+    "content_type": 13,
+    "object_id": 1,
+    "action": 0,
+    "create_at": "2018-01-11T16:24:57.906"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1405,7 +1416,9 @@
     "user": 1,
     "created_at": "2018-01-10T12:36:21.325",
     "updated_at": "2018-01-11T14:13:22.498",
-    "follows": []
+    "follows": [
+      13
+    ]
   }
 },
 {
@@ -1592,9 +1605,17 @@
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
     "updated_at": "2018-01-10T12:36:21.325",
-    "providers": [],
-    "services": [],
-    "tags": []
+    "providers": [
+      1
+    ],
+    "services": [
+      2,
+      3
+    ],
+    "tags": [
+      1,
+      2
+    ]
   }
 },
 {
@@ -1613,9 +1634,17 @@
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
     "updated_at": "2018-01-10T12:36:21.325",
-    "providers": [],
-    "services": [],
-    "tags": []
+    "providers": [
+      1
+    ],
+    "services": [
+      2,
+      3
+    ],
+    "tags": [
+      1,
+      2
+    ]
   }
 },
 {
@@ -1636,7 +1665,9 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [],
     "services": [],
-    "tags": []
+    "tags": [
+      1
+    ]
   }
 },
 {
@@ -1657,7 +1688,11 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [],
     "services": [],
-    "tags": []
+    "tags": [
+      1,
+      2,
+      3
+    ]
   }
 },
 {

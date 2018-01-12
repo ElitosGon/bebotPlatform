@@ -121,7 +121,7 @@ class Project(VoteModel, models.Model):
 	
 	# RELATION FIELD
 	user = models.ForeignKey(auth.models.User, related_name="proyectos", verbose_name="Dueño del registro", blank=True, null=True, on_delete=models.SET_NULL)
-	source = models.ForeignKey(auth.models.User, related_name="fuente", verbose_name="Proveedor código fuente", blank=True, null=True, on_delete=models.SET_NULL)
+	source = models.ForeignKey(Source, related_name="fuente", verbose_name="Proveedor código fuente", blank=True, null=True, on_delete=models.SET_NULL)
 	providers = models.ManyToManyField(Provider, related_name='proveedores', verbose_name="Proveedores utilizados", blank=True)
 	services = models.ManyToManyField(Service, related_name='servicios', verbose_name="Servicios utilizados", blank=True)
 	tags = models.ManyToManyField(Tag, related_name='tags', verbose_name="Tags que describen el proyecto", blank=True)
