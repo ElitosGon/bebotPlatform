@@ -179,3 +179,11 @@ def my_project_update(request, id):
     else:
         form = collaborator_forms.ProjectForm(instance=project)
     return render(request, 'collaborator/my_project_update.html', { 'form': form }, RequestContext(request))
+
+@login_required
+@transaction.atomic
+def my_project_delete(request, id):
+    project = models.Project.objects.get(pk=id)
+    project.delete()
+    messages.add_message(request, messages.SUCCESS, 'Proyecto borrado con éxito.', extra_tags='my_project_delete')
+    return redirect('my_projects')
