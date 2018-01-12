@@ -17,7 +17,7 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [1],
     "services": [2,3],
-    "tags": []
+    "tags": [1,2]
   }
 },
 {
@@ -38,7 +38,7 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [1],
     "services": [2,3],
-    "tags": []
+    "tags": [1,2]
   }
 },
 {
@@ -59,7 +59,7 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [],
     "services": [],
-    "tags": []
+    "tags": [1]
   }
 },
 {
@@ -80,7 +80,7 @@
     "updated_at": "2018-01-10T12:36:21.325",
     "providers": [],
     "services": [],
-    "tags": []
+    "tags": [1,2,3]
   }
 },
 {

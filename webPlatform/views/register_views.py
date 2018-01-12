@@ -93,8 +93,8 @@ def log_in(request):
 					status = None
 					form_sign_up = register_forms.SignUpForm()
 					form_log_in = register_forms.LoginForm()
-					contexto = { 'form_log_in':form_log_in ,'form_sign_up': form_sign_up,'status': status}
-					return render(request, 'general/log_in.html', contexto , RequestContext(request))
+					context = { 'form_log_in':form_log_in ,'form_sign_up': form_sign_up,'status': status}
+					return render(request, 'general/log_in.html', context , RequestContext(request))
 				except:
 					messages.add_message(request, messages.ERROR, "Problema al crear usuario.", extra_tags='signup')
 			else:
@@ -104,13 +104,13 @@ def log_in(request):
 		
 		status = request.POST['event']
 
-	contexto = { 
+	context = { 
 				 'form_log_in':form_log_in ,
 				 'form_sign_up': form_sign_up,
 				 'status': status
 			    }
 
-	return render(request, 'general/log_in.html', contexto , RequestContext(request))
+	return render(request, 'general/log_in.html', context , RequestContext(request))
 
 ####### LogOut #####################################
 @login_required
