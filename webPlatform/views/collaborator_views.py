@@ -138,3 +138,27 @@ def my_projects(request):
         return render(request,'collaborator/my_projects.html', None , RequestContext(request))
     else:
         return render(request,'error/404.html', None, RequestContext(request))
+
+@login_required
+def my_project_create(request):
+    storage = messages.get_messages(request)
+    storage.used = True
+    form = collaborator_forms.ProjectForm()
+
+    if request.method == 'POST':
+        form = collaborator_forms.ProjectForm(request.POST)
+        if form.is_valid():
+            try:
+                project = form.save()
+                project.user = request.user
+                project.save()
+                messages.add_message(request, messages.SUCCESS, "Projecto %s registrado con éxito." % project.name, extra_tags='my_project_create')
+                return redirect('my_projects')
+            except:
+                messages.add_message(request, messages.ERROR, "Problema al registar proyecto.", extra_tags='my_project_create')
+        else:
+            messages.add_message(request, messages.ERROR, "Problema al registar proyecto.", extra_tags='my_project_create')
+
+    context = {'form': form}
+
+    return render(request, 'collaborator/my_project_create.html', context , RequestContext(request))
