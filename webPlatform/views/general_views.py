@@ -49,7 +49,7 @@ def collaborator(request, id):
 		if collaborator:
 			query = request.GET.get("search")
 			provider = request.GET.get("provider")
-			projects = models.Project.objects.filter(user=collaborator.user.id).order_by('-updated_at')
+			projects = models.Project.objects.filter(user=collaborator.user.id, is_public=True).order_by('-updated_at')
 			
 			if query:
 				projects = projects.filter(Q(name__icontains=query) |
