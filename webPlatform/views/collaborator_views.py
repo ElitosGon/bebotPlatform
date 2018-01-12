@@ -33,7 +33,7 @@ def my_account_update(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.add_message(request, messages.SUCCESS, 'Perfil actualizado con exito.', extra_tags='my_account_update')
+            messages.add_message(request, messages.SUCCESS, 'Perfil actualizado con éxito.', extra_tags='my_account_update')
             return redirect('my_account')
         else:
             messages.add_message(request, messages.ERROR, 'Error al actualizar perfil.', extra_tags='my_account_update')
@@ -52,7 +52,7 @@ def my_account_change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user) 
-            messages.add_message(request, messages.SUCCESS, 'Tu contraseña ha sido cambiada con exito.', extra_tags='my_account_change_password')
+            messages.add_message(request, messages.SUCCESS, 'Tu contraseña ha sido cambiada con éxito.', extra_tags='my_account_change_password')
             return redirect('my_account')
         else:
             messages.add_message(request, messages.ERROR, 'Error al cambiar contraseña.', extra_tags='my_account_change_password')
@@ -140,6 +140,7 @@ def my_projects(request):
         return render(request,'error/404.html', None, RequestContext(request))
 
 @login_required
+@transaction.atomic
 def my_project_create(request):
     storage = messages.get_messages(request)
     storage.used = True
@@ -162,3 +163,19 @@ def my_project_create(request):
     context = {'form': form}
 
     return render(request, 'collaborator/my_project_create.html', context , RequestContext(request))
+
+@login_required
+@transaction.atomic
+def my_project_update(request, id):
+    project = models.Project.objects.get(pk=id)
+    if request.method == 'POST':
+        form = collaborator_forms.ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'Registro actualizado con éxito.', extra_tags='my_project_update')
+            return redirect('my_projects')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error al actualizar registro.', extra_tags='my_project_update')
+    else:
+        form = collaborator_forms.ProjectForm(instance=project)
+    return render(request, 'collaborator/my_project_update.html', { 'form': form }, RequestContext(request))
