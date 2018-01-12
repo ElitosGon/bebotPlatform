@@ -18,7 +18,7 @@ urlpatterns = [
 	url(r'^account/delete/$', collaborator_views.my_account_delete, name= "my_account_delete"),
 	
 	url(r'^account/projects/$', collaborator_views.my_projects, name= "my_projects"), 
-	#url(r'^account/project/create/$', collaborator_views.my_project_create, name= "my_project_create"), 
+	url(r'^account/project/create/$', collaborator_views.my_project_create, name= "my_project_create"), 
 	#url(r'^account/project/update/(?P<id>\d+)/$', collaborator_views.my_project_update, name= "my_project_update"), 
 	#url(r'^account/project/delete/(?P<id>\d+)/$', collaborator_views.my_project_delete, name= "my_project_delete"), 
 

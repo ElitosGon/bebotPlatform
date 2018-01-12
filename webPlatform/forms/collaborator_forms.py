@@ -30,3 +30,31 @@ class PasswordChangeForm(PasswordChangeForm):
         model = User
         fields = ('old_password', 'new_password1', 'new_password2')
 
+class ProjectForm(forms.ModelForm):
+    name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}))
+    description = forms.CharField(widget=forms.Textarea(attrs={'rows': 7, 'class':'form-control', 'placeholder':'Descripción'}))
+    url = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enlace a código fuente'}))
+    
+    class Meta:
+        model = models.Project
+        fields = ['name', 'description', 'url', 'is_public', 'source', 'providers', 'services', 'tags']
+
+        widgets = {
+            'is_public': forms.CheckboxInput(attrs={'class':'form-control','name':'is_public', 'data-toggle':'toggle', 'type':'checkbox', 'data-on':'Public', 'data-off':'Privado'}),
+            'source': forms.Select(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar fuente'}),
+            'providers': forms.SelectMultiple(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar proveedores'}),
+            'services': forms.SelectMultiple(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar servicios'}),
+            'tags': forms.SelectMultiple(attrs={'mobile': 'true','class':' dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar etiquetas'}),
+        }
+
+    def __init__(self, *a, **kw):
+        super(ProjectForm, self).__init__(*a, **kw)
+        self.fields['name'].required = True
+        self.fields['description'].required = True
+        self.fields['url'].required = False
+        self.fields['is_public'].initial = True
+        self.fields['source'].required = True
+        self.fields['providers'].required = False
+        self.fields['services'].required = False
+        self.fields['tags'].required = False
+        

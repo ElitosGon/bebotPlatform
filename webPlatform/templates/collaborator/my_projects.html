@@ -60,30 +60,37 @@
 		          <div class="row">
 		            <div class="col-md-12">
 		              <div class="content">
-		                <form method="get" action="" id="form">
-		                  <div class="row">
-		                    <div class="col-md-4 col-sm-6">
-		                      <div class="form-group">
-		                        <input class="form-control" type="search" placeholder="Palabra clave" name="search">
-		                      </div>
-		                    </div>
-		                    <div class="col-md-4 col-sm-6">
-		                      <div class="search-category-container">
-		                        <label class="styled-select">
-		                          <select class="dropdown-product selectpicker" name="provider">
-		                            <option value="0">Todos los proveedores</option>
-		                            <option value="2">IBM Watson</option>
-		                            <option value="1">Microsoft Cognitive Services</option>
-		                            <option value="3">Google</option>
-		                          </select>
-		                        </label>
-		                      </div>
-		                    </div>
-		                    <div class="col-md-1 col-sm-6">
-		                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
-		                    </div>
-		                  </div>
-		                </form>
+		              	<div class="row">
+			                <form method="get" action="" id="form">
+			                    <div class="col-md-3 col-sm-6">
+			                      <div class="form-group">
+			                        <input class="form-control" type="search" placeholder="Palabra clave" name="search">
+			                      </div>
+			                    </div>
+			                    <div class="col-md-3 col-sm-6">
+			                      <div class="search-category-container">
+			                        <label class="styled-select">
+			                          <select class="dropdown-product selectpicker" name="provider">
+			                            <option value="0">Todos los proveedores</option>
+			                            <option value="2">IBM Watson</option>
+			                            <option value="1">Microsoft Cognitive Services</option>
+			                            <option value="3">Google</option>
+			                          </select>
+			                        </label>
+			                      </div>
+			                    </div>
+			                    <div class="col-md-1 col-sm-6">
+			                      <button type="submit" class="btn btn-search-icon" style="width: 100%;"><i class="ti-search"></i></button>
+			                    </div>
+			                </form>
+			                <div class="col-md-2">
+			                	<a href="{% url 'my_project_create' %}">
+				            	<button class="btn btn-search-icon" style="background-color: #94c523; width: 100%;" >
+				            		<i class="ti-plus"></i>
+				            	</button>
+				            	</a>
+				            </div>
+		                </div>
 		              </div>
 		            </div>
 		          </div>
