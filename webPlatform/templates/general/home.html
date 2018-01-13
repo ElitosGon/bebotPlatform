@@ -58,7 +58,7 @@
       <div class="header">    
         <section id="intro" class="section-intro">
           <div class="logo-menu">
-            <nav class="navbar navbar-default main-navigation" role="navigation" data-spy="affix" data-offset-top="50">
+            <nav class="navbar navbar-default main-navigation" role="navigation" data-spy="affix" data-offset-top="50" style="background-color: #444 !important;">
               <div class="container">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -87,6 +87,13 @@
                       </a>
                     </li>
                   </ul>
+                   <ul class="nav navbar-nav">
+                    <li>
+                      <a class="active" href="{% url 'projects' %}">
+                      Proyectos
+                      </a>
+                    </li>
+                  </ul>
                   <ul class="nav navbar-nav navbar-right float-right">
                     {% if user.is_authenticated %}
                     <li class="right">
@@ -112,6 +119,9 @@
                 <li>
                   <a class="active" href="{% url 'collaborators' %}">Colaboradores</a>                      
                 </li>
+                <li>
+                  <a class="active" href="{% url 'projects' %}">Proyectos</a>                      
+                </li>
                 <li class="btn-m">
                   {% if not request.user.is_authenticated %}
                   <a href="{% url 'log_in' %}"><i class="ti-lock"></i>  Log In</a>
@@ -131,6 +141,45 @@
       {% endblock %}  
 
       {% block localbody %}
+      <div class="search-container" style="background-image: url('{% static 'assets/img/CodeBack.jpg' %}'); background-attachment: fixed; background-position: center; ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.6); padding-top: 20px; padding-bottom: 20px;">
+              <h1 style="color: white;">Encuentra el chatbot que necesitas</h1><br><h2>Integrados con <strong>servicios cognitivos</strong> de los principales proveedores!</h2>
+              <div class="content">
+                <form id="form-search" action="{% url 'projects'%}" method="GET">
+                  <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                      <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Ingrese palabras claves" name="search">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                      <div class="search-category-container">
+                        <label class="styled-select">
+                          <select class="dropdown-product selectpicker" name="provider">
+                            <option value="0">Todos los proveedores</option>
+                            <option value="2">IBM Watson</option>
+                            <option value="1">Microsoft Cognitive Services</option>
+                            <option value="3">Google</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-1 col-sm-6">
+                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="popular-jobs">
+                <b style="color: white">Principales Búsquedas: </b>
+                <a href="{% url 'projects' %}?search=Microsoft">Microsoft Cognitive Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {% endblock %}
 
       {% block footer %}

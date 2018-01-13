@@ -78,3 +78,38 @@ def collaborator(request, id):
 			return Http404
 	else:
 		return Http404
+
+def projects(request):
+	if request.method == 'GET':
+		projects = models.Project.objects.filter(is_public=True).order_by('-updated_at')	
+		if projects:
+			query = request.GET.get("search")
+			provider = request.GET.get("provider")
+			
+			if query:
+				projects = projects.filter(Q(name__icontains=query) |
+										   Q(description__icontains=query) |
+										   Q(source__name__icontains=query) |
+										   Q(providers__name__icontains=query) |
+										   Q(services__name__icontains=query) |
+										   Q(tags__name__icontains=query)).distinct()
+
+			if provider != '0' and provider != None:
+				projects = projects.filter(providers__id=provider).distinct()
+			
+			page = request.GET.get('page', 1)
+			paginator = Paginator(projects, 5)
+
+			try:
+				projects = paginator.page(page)
+			except PageNotAnInteger:
+				projects = paginator.page(1)
+			except EmptyPage:
+				projects = paginator.page(paginator.num_pages)
+
+			context = {'projects': projects}
+			return render(request,'general/projects.html', context ,RequestContext(request))
+		else:
+			return Http404
+	else:
+		return Http404
