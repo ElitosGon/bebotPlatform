@@ -1,6 +1,6 @@
 # -*- coding: utf-8 *-*
 from django.conf.urls import url, include
-from webPlatform.views import admin_views, general_views, collaborator_views, register_views
+from webPlatform.views import general_views, collaborator_views, register_views
 from django.contrib.auth.views import password_reset, password_reset_confirm, password_reset_complete
 
 
@@ -9,6 +9,7 @@ urlpatterns = [
 	url(r'^$', general_views.home, name= "home"), 
 	url(r'^collaborators/$', general_views.collaborators, name= "collaborators"), 
 	url(r'^collaborator/(?P<id>\d+)/$', general_views.collaborator, name= "collaborator"), 
+	url(r'^projects/$', general_views.projects, name= "projects"), 
 
 
 	# Collaborator
