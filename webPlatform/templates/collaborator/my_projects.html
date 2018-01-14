@@ -11,6 +11,8 @@
 {% endblock %}
 
 {% block localbody %}
+	<script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>
+
 	 <div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
 		<div class="container">
 			<div class="row">
@@ -117,15 +119,68 @@
 			                  			<a class="pull-right" href="{% url 'my_project_update' p.id %}" style="margin-right: 10px !important;">
 			                  				<i class="ti-pencil"></i>
 			                  			</a>
-			                  			{% if p.is_public %}
-				                  			<a class="pull-right" href="{% url 'lock_project' p.id %}" style="margin-right: 10px !important;">
-				                  				<i class="ti-unlock"></i>
-				                  			</a>			                  			
-				                  		{% else %}
-				                  			<a class="pull-right" href="{% url 'unlock_project' p.id %}"  style="margin-right: 10px !important;">
+			                  			
+			                  			<!-- Lock and unlock -->
+				                  			<span class="pull-right btn btn-success btn-sm" id="send_lock{{p.id}}" style=" margin-right: 10px !important;">
+				                  				<i class="ti-unlock"></i> Publico
+				                  			</span>	
+				                  							                  		
+				                  			<span class="pull-right btn btn-warning btn-sm" id="send_unlock{{p.id}}" style=" margin-right: 10px !important;">
+				                  				<i class="ti-lock"></i> Privado
+				                  			</span>
+
+				                  			<script type="text/javascript">
+				                  				{% if p.is_public %}
+				                  					$('#send_lock{{p.id}}').show();
+												    $('#send_unlock{{p.id}}').hide();
+				                  				{% else %}
+				                  					$('#send_lock{{p.id}}').hide();
+												    $('#send_unlock{{p.id}}').show();
+				                  				{% endif %}
+
+				                  				$('#send_lock{{p.id}}').click(function(event) {
+												    event.preventDefault();
+												    $.ajax({
+												        type: 'POST',
+												        url: "http://{{request.META.HTTP_HOST}}{% url 'lock_project' p.id %}",
+												        data: 'csrfmiddlewaretoken={{csrf_token}}',
+                										dataType: "html",
+												        success: function (result) {
+												            console.log(result);
+												            console.log('lock  OK');
+												            $('#send_lock{{p.id}}').hide();
+												            $('#send_unlock{{p.id}}').show();
+												        },
+												        error: function (request, status, error) {
+												            console.log(error);
+												        }
+												    });
+												});
+
+				                  				$('#send_unlock{{p.id}}').click(function(event) {
+												    event.preventDefault();
+												    $.ajax({
+												        type: 'POST',
+												        url: "http://{{request.META.HTTP_HOST}}{% url 'unlock_project' p.id %}",
+												        data: 'csrfmiddlewaretoken={{csrf_token}}',
+                										dataType: "html",
+												        success: function (result) {
+												            console.log(result);
+												            console.log('unlock  OK');
+												            $('#send_unlock{{p.id}}').hide();
+												            $('#send_lock{{p.id}}').show();
+												        },
+												        error: function (request, status, error) {
+												            console.log(error);
+												        }
+												    });
+												});
+				                  			</script>
+
+				                  			<!-- <a class="pull-right" href="{% url 'unlock_project' p.id %}"  style="margin-right: 10px !important;">
 				                  				<i class="ti-lock"></i>
-				                  			</a>
-			                  			{% endif %}
+				                  			</a> -->
+			                  			<!-- End lock and unlock -->
 			                  		</h4>
 			                  	</div>
 			                  	<div class="col-md-12">

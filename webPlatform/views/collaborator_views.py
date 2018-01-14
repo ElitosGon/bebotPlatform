@@ -15,6 +15,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from actstream.actions import follow, unfollow
+from django.http import HttpResponse
+
 
 ####### My account #####################################
 @login_required
@@ -93,7 +95,8 @@ def lock_project(request, id):
     project = models.Project.objects.get(pk=id)
     project.is_public = False
     project.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponse(status=200)
+    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 ####### Project unlock ####################
 @login_required
@@ -102,7 +105,8 @@ def unlock_project(request, id):
     project = models.Project.objects.get(pk=id)
     project.is_public = True
     project.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponse(status=200)
+    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 ####### Own Projects
 @login_required
