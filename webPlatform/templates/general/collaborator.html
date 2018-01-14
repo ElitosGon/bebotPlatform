@@ -46,6 +46,7 @@
 								<div class="widget-content">
 									<span class="location"><i class="ti-heart"></i> Seguidores: {{collaborator.follows.all.count}} </span>
 									<span class="rate"><i class="ti-email"></i>{{collaborator.user.email}}</span>
+									<span class="rate">N° de proyectos registrados:  {{num_project}} </span>
 								</div>
 								{% if user.is_authenticated and user != collaborator.user %}
 									<a class="btn btn-common btn-lm" href="{% url 'follow_user' collaborator.id %}" style="background-color: #51d1fb;  display: block;">Seguir</a>
@@ -57,7 +58,9 @@
 					</div>
 				</aside>
 
+				
 				<div class="col-md-9">
+				{% if projects %}
 					<h5 class="widget-title">Buscar proyecto</h5>
 					<div class="container">
 			          <div class="row">
@@ -98,7 +101,16 @@
 							<div class="job-list">
 				                <div class="job-list-content" style="margin-left: 0 !important;">
 				                  <div class="row">
-				                  	<div class="col-md-12"><h4><a href="">{{p.name}}</a></h4></div>
+				                  	<div class="col-md-12">
+				                  	<h4>
+				                  		<a href="">{{p.name}}</a> 
+				                  		{% if p.use_library %}
+		                  					<a href="#">
+		                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
+		                  					</a>
+			                  			{% endif %}
+			                  		</h4>
+				                  	</div>
 				                  	<div class="col-md-12">
 				                  		<h4 class="widget-title">
 			                  			{% if p.providers.all %}
@@ -124,7 +136,6 @@
 				                    <div class="pull-left">
 				                      <div class="meta-tag">
 				                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-				                       <span><i class="ti-time"></i>Actualización: {{p.created_at.date}}</span>
 				                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
 				                      </div>
 				                    </div>
@@ -145,11 +156,15 @@
 						{% endfor %}
 					</div>
 					
+
 					{% if projects.has_next %}
 					    <a class="infinite-more-link" href="?page={{ projects.next_page_number }}">More</a>
 					 {% endif %}
-
+				{% else %}
+						<h5 class="widget-title">No se han encontrado proyectos</h5>
+				{% endif %}
 				</div>
+				
 			</div>
 		</div>
 	</div>

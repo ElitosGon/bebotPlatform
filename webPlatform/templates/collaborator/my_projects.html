@@ -105,7 +105,12 @@
 			                  	<div class="col-md-12">
 			                  		<h4>
 			                  			<a href="">{{p.name}}</a>
-			                  			<a class="pull-right" href="{% url 'my_project_delete' p.id %}"">
+			                  			{% if p.use_library %}
+		                  					<a href="#">
+		                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
+		                  					</a>
+			                  			{% endif %}
+			                  			<a class="pull-right" onclick="return confirm('¿Quieres eliminar este registro?');" href="{% url 'my_project_delete' p.id %}">
 			                  				<i class="ti-trash"></i>
 			                  			</a>
 			                  			<a class="pull-right" href="{% url 'my_project_update' p.id %}" style="margin-right: 10px !important;">
@@ -141,7 +146,6 @@
 			                    <div class="pull-left">
 			                      <div class="meta-tag">
 			                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-			                       <span><i class="ti-time"></i>Actualización: {{p.created_at.date}}</span>
 			                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
 			                      </div>
 			                    </div>

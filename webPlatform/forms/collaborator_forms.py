@@ -37,10 +37,11 @@ class ProjectForm(forms.ModelForm):
     
     class Meta:
         model = models.Project
-        fields = ['name', 'description', 'url', 'is_public', 'source', 'providers', 'services', 'tags']
+        fields = ['name', 'description', 'url', 'is_public', 'use_library', 'source', 'providers', 'services', 'tags']
 
         widgets = {
             'is_public': forms.CheckboxInput(attrs={'class':'form-control','name':'is_public', 'data-toggle':'toggle', 'type':'checkbox', 'data-on':'Public', 'data-off':'Privado'}),
+            'use_library': forms.CheckboxInput(attrs={'class':'form-control','name':'use_library', 'data-toggle':'toggle', 'type':'checkbox', 'data-on':'Si', 'data-off':'No'}),
             'source': forms.Select(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar fuente'}),
             'providers': forms.SelectMultiple(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar proveedores'}),
             'services': forms.SelectMultiple(attrs={'mobile': 'true','class':'dropdown-product selectpicker', 'data-live-search':'true', 'title': 'Seleccionar servicios'}),
@@ -53,6 +54,9 @@ class ProjectForm(forms.ModelForm):
         self.fields['description'].required = True
         self.fields['url'].required = False
         self.fields['is_public'].initial = True
+        self.fields['is_public'].required = True
+        self.fields['use_library'].initial = False
+        self.fields['use_library'].required = False
         self.fields['source'].required = True
         self.fields['providers'].required = False
         self.fields['services'].required = False

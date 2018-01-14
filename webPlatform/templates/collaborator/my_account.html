@@ -80,7 +80,7 @@
 							</div>
 						</div>
 						<a class="btn btn-common btn-sm" href="{% url 'my_account_update' %}">Actualizar</a>
-						<a class="btn btn-common btn-sm" style="background-color: #f44336" href="{% url 'my_account_delete' %}">Eliminar</a>
+						<a class="btn btn-common btn-sm" onclick="return confirm('¿Quieres eliminar tu cuenta?');" style="background-color: #f44336" href="{% url 'my_account_delete' %}">Eliminar</a>
 					</div>
 				</div>
 			</div>

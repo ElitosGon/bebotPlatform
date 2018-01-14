@@ -115,10 +115,11 @@ class Project(VoteModel, models.Model):
 	# SIMPLE FIELD 
 	name = models.CharField(default="", max_length=100, verbose_name="Nombre", null=True, blank=True)
 	description = models.CharField(default="", max_length=600, verbose_name="Descripción", null=True, blank=True)
-	url = models.CharField(default="", max_length=600, verbose_name="Enlace a código fuente", null=True, blank=True)
+	url = models.CharField(default="", max_length=254, verbose_name="Enlace a código fuente", null=True, blank=True, unique=True)
 	is_public = models.BooleanField(verbose_name="¿Es visible?", blank=True, default=True)
 	number_likes = models.IntegerField(verbose_name="Número de likes", null=True, blank=True)
-	
+	use_library = models.BooleanField(verbose_name="¿Utiliza Librería BeBot?", blank=True, default=True)
+
 	# RELATION FIELD
 	user = models.ForeignKey(auth.models.User, related_name="proyectos", verbose_name="Dueño del registro", blank=True, null=True, on_delete=models.SET_NULL)
 	source = models.ForeignKey(Source, related_name="fuente", verbose_name="Proveedor código fuente", blank=True, null=True, on_delete=models.SET_NULL)
@@ -132,7 +133,7 @@ class Project(VoteModel, models.Model):
 	updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name="Fecha última modificación")
 
 	def __str__(self):
-		return "%d" %self.name
+		return self.name
 
 
 

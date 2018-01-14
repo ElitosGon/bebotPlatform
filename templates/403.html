@@ -1,0 +1,28 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+
+{% block localcss %}
+
+
+{% endblock %}
+
+{% block localbody %}
+	<div class="search-container" style="background-image: url('{% static 'assets/img/CodeBack.jpg' %}'); background-attachment: fixed; background-position: center; ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.6); padding-top: 20px; padding-bottom: 20px;">
+              <h1 style="color: white;">Lo sentimos !!</h1><br><h2> <strong>Error 403: Access Denied / Prohibited Error</strong>.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
+
+{% block localscripts %}
+
+{% endblock %}
+
+

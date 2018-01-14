@@ -12,7 +12,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 ####### HOME #####################################
 def home(request):
 	if request.method == 'GET':
-		return render(request,'general/home.html', None , RequestContext(request))
+		providers = models.Provider.objects.all()
+		services = models.Service.objects.all()
+		context = {'services': services, 'providers': providers}
+		return render(request,'general/home.html', context , RequestContext(request))
 	else:
 		return render(request,'error/404.html', None, RequestContext(request))
 
@@ -50,7 +53,8 @@ def collaborator(request, id):
 			query = request.GET.get("search")
 			provider = request.GET.get("provider")
 			projects = models.Project.objects.filter(user=collaborator.user.id, is_public=True).order_by('-updated_at')
-			
+			num_project = projects.count
+
 			if query:
 				projects = projects.filter(Q(name__icontains=query) |
 										   Q(description__icontains=query) |
@@ -72,7 +76,7 @@ def collaborator(request, id):
 			except EmptyPage:
 				projects = paginator.page(paginator.num_pages)
 
-			context = {'collaborator': collaborator, 'projects': projects }
+			context = {'collaborator': collaborator, 'projects': projects, 'num_project': num_project}
 			return render(request,'general/collaborator.html', context ,RequestContext(request))
 		else:
 			return Http404
@@ -85,6 +89,7 @@ def projects(request):
 		if projects:
 			query = request.GET.get("search")
 			provider = request.GET.get("provider")
+			service = request.GET.get("service")
 			
 			if query:
 				projects = projects.filter(Q(name__icontains=query) |
@@ -96,6 +101,9 @@ def projects(request):
 
 			if provider != '0' and provider != None:
 				projects = projects.filter(providers__id=provider).distinct()
+
+			if service != '0' and service != None:
+				projects = projects.filter(services__id=service).distinct()
 			
 			page = request.GET.get('page', 1)
 			paginator = Paginator(projects, 5)
@@ -107,7 +115,9 @@ def projects(request):
 			except EmptyPage:
 				projects = paginator.page(paginator.num_pages)
 
-			context = {'projects': projects}
+			providers = models.Provider.objects.all()
+			services = models.Service.objects.all()
+			context = {'projects': projects, 'services': services, 'providers': providers}
 			return render(request,'general/projects.html', context ,RequestContext(request))
 		else:
 			return Http404
