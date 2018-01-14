@@ -78,7 +78,7 @@ def my_account_delete(request):
 def like_project(request, id):
     project = models.Project.objects.get(pk=id)
     project.votes.up(request.user.id)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponse(status=200)
 
 ####### Project unlike ####################
 @login_required
@@ -86,7 +86,7 @@ def like_project(request, id):
 def unlike_project(request, id):
     project = models.Project.objects.get(pk=id)
     project.votes.delete(request.user.id)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponse(status=200)
 
 ####### Project lock ####################
 @login_required
@@ -96,7 +96,7 @@ def lock_project(request, id):
     project.is_public = False
     project.save()
     return HttpResponse(status=200)
-    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 
 ####### Project unlock ####################
 @login_required
@@ -106,7 +106,23 @@ def unlock_project(request, id):
     project.is_public = True
     project.save()
     return HttpResponse(status=200)
-    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    
+####### User follow ####################
+@login_required
+@transaction.atomic
+def user_subscribe(request, id):
+    user = User.objects.get(pk=id)
+    follow(request.user, user)
+    return HttpResponse(status=200)
+
+
+####### User unfollow ####################
+@login_required
+@transaction.atomic
+def user_unsubscribe(request, id):
+    user = User.objects.get(pk=id)
+    unfollow(request.user, user)
+    return HttpResponse(status=200)
 
 ####### Own Projects
 @login_required

@@ -30,6 +30,8 @@ urlpatterns = [
 	url(r'^project/lock/(?P<id>\d+)/$', collaborator_views.lock_project, name="lock_project"),
 	url(r'^project/unlock/(?P<id>\d+)/$', collaborator_views.unlock_project, name="unlock_project"),
 
+	url(r'^account/subscribe/(?P<id>\d+)/$', collaborator_views.user_subscribe, name="user_subscribe"),
+	url(r'^account/unsubscribe/(?P<id>\d+)/$', collaborator_views.user_unsubscribe, name="user_unsubscribe"),
 
 	url(r'^login/$', register_views.log_in, name= "log_in"), 
 	url(r'^logout/$', register_views.log_out, name= "log_out"), 
