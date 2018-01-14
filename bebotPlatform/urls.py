@@ -18,6 +18,7 @@ from django.conf.urls import url, i18n
 from django.conf import settings
 from django.urls import include, path
 from django.views.static import serve
+from django.urls import reverse
 
 admin.autodiscover()
 
@@ -29,10 +30,13 @@ handler404 = 'webPlatform.views.error_views.page_not_found_view'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
     # Other views
     url(r'^i18n/', include(i18n)),
     url(r'^media/(?P<path>.*)$', serve , { 'document_root': settings.MEDIA_ROOT }),
     url(r'^static/(?P<path>.*)$', serve , { 'document_root':settings.STATIC_ROOT }),
 
-    path('', include('webPlatform.urls')),
+    url('', include('webPlatform.urls')),
+    url(r'^activity/', include('actstream.urls')),
+
 ]

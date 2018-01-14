@@ -8,6 +8,8 @@ from django.db.models import Q
 from django.conf import settings
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
+from actstream import registry
 
 ####### HOME #####################################
 def home(request):

@@ -128,6 +128,22 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "actstream",
+    "model": "follow"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "actstream",
+    "model": "action"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "f0alc03qb7t1ex5f66j0ebxgwjks92b4",
   "fields": {
@@ -165,6 +181,14 @@
   "fields": {
     "session_data": "N2M1MjQ5NDUyMTU1MTVmNDgzNzZiOWMwZGUwY2NhMDExZWVmNmIyNjp7fQ==",
     "expire_date": "2018-01-23T16:13:16.754"
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "example.com",
+    "name": "example.com"
   }
 },
 {
@@ -626,14 +650,207 @@
   }
 },
 {
-  "model": "vote.vote",
+  "model": "actstream.action",
+  "pk": 1,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:07:40.794",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
   "pk": 2,
   "fields": {
-    "user_id": 1,
-    "content_type": 13,
-    "object_id": 1,
-    "action": 0,
-    "create_at": "2018-01-11T16:24:57.906"
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:08:22.020",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 3,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:10:40.593",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 4,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:17:25.596",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 5,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:18:18.373",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 6,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:20:38.369",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 7,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:20:45.537",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 8,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:21:30.846",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 9,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T13:53:54.605",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 10,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T14:05:02.470",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 11,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T14:05:10.287",
+    "public": true,
+    "data": null
+  }
+},
+{
+  "model": "actstream.action",
+  "pk": 12,
+  "fields": {
+    "actor_content_type": 4,
+    "actor_object_id": "1",
+    "verb": "started following",
+    "description": null,
+    "target_content_type": 4,
+    "target_object_id": "2",
+    "action_object_content_type": null,
+    "action_object_object_id": null,
+    "timestamp": "2018-01-14T14:14:28.889",
+    "public": true,
+    "data": null
   }
 },
 {
@@ -1069,6 +1286,60 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add follow",
+    "content_type": 17,
+    "codename": "add_follow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change follow",
+    "content_type": 17,
+    "codename": "change_follow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete follow",
+    "content_type": 17,
+    "codename": "delete_follow"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can add action",
+    "content_type": 18,
+    "codename": "add_action"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can change action",
+    "content_type": 18,
+    "codename": "change_action"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can delete action",
+    "content_type": 18,
+    "codename": "delete_action"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -1415,10 +1686,7 @@
     "avatar": "documents/avatar/2018/01/10/bb8.jpeg",
     "user": 1,
     "created_at": "2018-01-10T12:36:21.325",
-    "updated_at": "2018-01-11T14:13:22.498",
-    "follows": [
-      13
-    ]
+    "updated_at": "2018-01-11T14:13:22.498"
   }
 },
 {
@@ -1429,8 +1697,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 16,
     "created_at": "2018-01-10T20:59:05.134",
-    "updated_at": "2018-01-11T14:13:22.740",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.740"
   }
 },
 {
@@ -1441,8 +1708,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 2,
     "created_at": "2018-01-11T14:13:22.554",
-    "updated_at": "2018-01-11T14:13:22.554",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.554"
   }
 },
 {
@@ -1453,8 +1719,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 3,
     "created_at": "2018-01-11T14:13:22.571",
-    "updated_at": "2018-01-11T14:13:22.581",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.581"
   }
 },
 {
@@ -1465,8 +1730,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 4,
     "created_at": "2018-01-11T14:13:22.592",
-    "updated_at": "2018-01-11T14:13:22.595",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.595"
   }
 },
 {
@@ -1477,8 +1741,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 5,
     "created_at": "2018-01-11T14:13:22.628",
-    "updated_at": "2018-01-11T14:13:22.629",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.629"
   }
 },
 {
@@ -1489,8 +1752,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 6,
     "created_at": "2018-01-11T14:13:22.638",
-    "updated_at": "2018-01-11T14:13:22.639",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.639"
   }
 },
 {
@@ -1501,8 +1763,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 7,
     "created_at": "2018-01-11T14:13:22.647",
-    "updated_at": "2018-01-11T14:13:22.649",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.649"
   }
 },
 {
@@ -1513,8 +1774,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 8,
     "created_at": "2018-01-11T14:13:22.657",
-    "updated_at": "2018-01-11T14:13:22.658",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.658"
   }
 },
 {
@@ -1525,8 +1785,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 9,
     "created_at": "2018-01-11T14:13:22.666",
-    "updated_at": "2018-01-11T14:13:22.668",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.668"
   }
 },
 {
@@ -1537,8 +1796,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 10,
     "created_at": "2018-01-11T14:13:22.676",
-    "updated_at": "2018-01-11T14:13:22.678",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.678"
   }
 },
 {
@@ -1549,8 +1807,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 11,
     "created_at": "2018-01-11T14:13:22.700",
-    "updated_at": "2018-01-11T14:13:22.700",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.700"
   }
 },
 {
@@ -1561,8 +1818,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 12,
     "created_at": "2018-01-11T14:13:22.707",
-    "updated_at": "2018-01-11T14:13:22.710",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.710"
   }
 },
 {
@@ -1573,8 +1829,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 13,
     "created_at": "2018-01-11T14:13:22.719",
-    "updated_at": "2018-01-11T14:13:22.721",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.721"
   }
 },
 {
@@ -1585,8 +1840,7 @@
     "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
     "user": 14,
     "created_at": "2018-01-11T14:13:22.731",
-    "updated_at": "2018-01-11T14:13:22.732",
-    "follows": []
+    "updated_at": "2018-01-11T14:13:22.732"
   }
 },
 {
@@ -1598,9 +1852,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#1",
     "is_public": true,
     "number_likes": 0,
+    "use_library": true,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1627,10 +1882,11 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#2",
     "is_public": true,
     "number_likes": 0,
-    "user": 1,
+    "use_library": true,
+    "user": 2,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
     "updated_at": "2018-01-10T12:36:21.325",
@@ -1656,9 +1912,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#3",
     "is_public": true,
     "number_likes": 0,
+    "use_library": true,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1679,9 +1936,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#4",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1704,9 +1962,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#5",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1725,9 +1984,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#6",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1746,9 +2006,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#7",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1767,9 +2028,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#8",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1788,9 +2050,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#9",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1809,9 +2072,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#10",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1830,9 +2094,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#11",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1851,9 +2116,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#12",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1872,9 +2138,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#13",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1893,9 +2160,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#14",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1914,9 +2182,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#15",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1935,9 +2204,10 @@
     "num_vote_down": 0,
     "name": "BeBot Test",
     "description": "BeBot Project : Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed",
-    "url": "https://github.com/ElitosGon/bebotPlatform",
+    "url": "https://github.com/ElitosGon/bebotPlatform#16",
     "is_public": true,
     "number_likes": 0,
+    "use_library": false,
     "user": 1,
     "source": 1,
     "created_at": "2018-01-10T12:36:21.325",
@@ -1945,6 +2215,17 @@
     "providers": [],
     "services": [],
     "tags": []
+  }
+},
+{
+  "model": "actstream.follow",
+  "pk": 12,
+  "fields": {
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "actor_only": true,
+    "started": "2018-01-14T14:14:28.885"
   }
 },
 {

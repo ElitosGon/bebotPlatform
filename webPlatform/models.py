@@ -12,8 +12,7 @@ from django.db.models import Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from vote.models import VoteModel
-
-
+from actstream import registry
 
 # Create your models here.
 class TypeTag(models.Model):
@@ -93,14 +92,14 @@ class Profile(models.Model):
 
 	# RELATION FIELD
 	user = models.OneToOneField(auth.models.User, related_name="profile", blank=True, null=True, on_delete=models.CASCADE)
-	follows = models.ManyToManyField(auth.models.User, related_name='followed_by', verbose_name="Seguidores", blank=True)
-
+	
 	# TIMESTAMP FIELD
 	created_at = models.DateTimeField(auto_now_add=True, blank=True, verbose_name="Fecha creación")
 	updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name="Fecha última modificación")
 
 	def __str__(self):
 		return "%d" %self.id
+
 
 @receiver(post_save, sender=auth.models.User)
 def update_user_profile(sender, instance, created, **kwargs):

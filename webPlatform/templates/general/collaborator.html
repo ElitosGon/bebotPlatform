@@ -3,6 +3,8 @@
 {{ form.media.css }}
 
 {% load static %}
+{% load activity_tags %}
+{% load filters %}
 
 {% block localcss %}
 
@@ -44,13 +46,29 @@
 							</li>
 							<li>
 								<div class="widget-content">
-									<span class="location"><i class="ti-heart"></i> Seguidores: {{collaborator.follows.all.count}} </span>
+									<span class="location"><i class="ti-heart"></i> Subscriptores: {{collaborator.user|followers_num}} </span>
 									<span class="rate"><i class="ti-email"></i>{{collaborator.user.email}}</span>
-									<span class="rate">N° de proyectos registrados:  {{num_project}} </span>
+									<span class="rate">N° de proyectos registrados:  {{collaborator.user|projects_num}} </span>
 								</div>
+
+									
 								{% if user.is_authenticated and user != collaborator.user %}
-									<a class="btn btn-common btn-lm" href="{% url 'follow_user' collaborator.id %}" style="background-color: #51d1fb;  display: block;">Seguir</a>
+								   									 
+									    {% if request.user|is_following:collaborator.user %}
+									     <a class="btn btn-common btn-lm" href="{% follow_url collaborator.user %}?next={{request.path}}" style="background-color: #FF9D02;  display: block;">
+									        Desuscribirme
+									     </a>
+									    {% else %}
+									      <a class="btn btn-common btn-lm" href="{% follow_url collaborator.user %}?next={{request.path}}" style="background-color: #51d1fb;  display: block;">
+									        Suscribirme
+									     </a>
+									    {% endif %}
+								   
+									
+								    
+
 								{% endif %}
+
 								<div class="clearfix"></div>
 							</li>
 						</ul>
@@ -136,16 +154,25 @@
 				                    <div class="pull-left">
 				                      <div class="meta-tag">
 				                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-				                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
+				                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
 				                      </div>
 				                    </div>
 				                    <div class="pull-right">
-				                      {% if user.is_authenticated %}
+				                      {% if user.is_authenticated and collaborator.user != user %}
+					                      {% if p|is_user_like_project:user.id %}
+					                      <a href="{% url 'unlike_project' p.id %}">
+						                      <div class="icon">
+						                        <i class="ti-heart" style="color: red"></i>		                        
+						                      </div>
+					                      </a>
+					                      {% else %}
 					                      <a href="{% url 'like_project' p.id %}">
 						                      <div class="icon">
 						                        <i class="ti-heart"></i>		                        
 						                      </div>
 					                      </a>
+					                      {% endif %}
+
 				                      {% endif %}
 				                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
 				                    </div>

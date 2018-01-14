@@ -44,6 +44,7 @@ Pass = bebotplatform
 ```
 pip3 install -r requirements.txt
 ```
+requeriments django-activity-stream==0.6.5 - Update manager.py file 'user.is_anonymous'
 
 ## Development Env Runserver
 ### localhost

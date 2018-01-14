@@ -3,6 +3,7 @@
 {{ form.media.css }}
 
 {% load static %}
+{% load filters %}
 
 {% block localcss %}
 
@@ -118,16 +119,25 @@
 				                    <div class="pull-left">
 				                      <div class="meta-tag">
 				                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-				                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
+				                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
 				                      </div>
 				                    </div>
 				                    <div class="pull-right">
-				                      {% if user.is_authenticated %}
+				                      {% if user.is_authenticated and p.user != user %}
+					                      {% if p|is_user_like_project:user.id %}
+					                      <a href="{% url 'unlike_project' p.id %}">
+						                      <div class="icon">
+						                        <i class="ti-heart" style="color: red"></i>		                        
+						                      </div>
+					                      </a>
+					                      {% else %}
 					                      <a href="{% url 'like_project' p.id %}">
 						                      <div class="icon">
 						                        <i class="ti-heart"></i>		                        
 						                      </div>
 					                      </a>
+					                      {% endif %}
+
 				                      {% endif %}
 				                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
 				                    </div>
