@@ -60,18 +60,17 @@
 												<h5>{{c.user.first_name}} {{c.user.last_name}}</h5>
 											</div>
 											<div class="manager-meta">
-												<span class="rate">Subscriptores: {{c.user|followers_num}}</span>
-												{% if request.user|is_following:c.user %}
-											     <a class="btn btn-common" href="{% follow_url c.user %}?next={{request.path}}" style="background-color: #FF9D02;">
-											        Desuscribirme
-											     </a>
-											    {% else %}
-											      <a class="btn btn-common" href="{% follow_url c.user %}?next={{request.path}}" style="background-color: #51d1fb;">
-											        Suscribirme
-											     </a>
-											    {% endif %}
+												<span class="rate">Subscriptores: <text id="subscribe_num{{c.user.id}}">{{c.user|followers_num}}</text></span>
+											
+											{% if user.is_authenticated and user != c.user %}
+												<samp id="unsubscribe{{c.user.id}}" class="btn btn-common" style="background-color: #FF9D02;  {% if request.user|is_following:c.user %}display: block;{% else %}display: none;{% endif %}" onclick="unsubscribe('{{c.user.id}}');">Desuscribirme</samp>
+
+								   				<samp id="subscribe{{c.user.id}}" class="btn btn-common" style="background-color: #51d1fb;  {% if request.user|is_following:c.user %}display: none;{% else %}display: block;{% endif %}" onclick="subscribe('{{c.user.id}}');">Suscribirme</samp>
+								   			{% endif %}
+												
 
 											</div>
+								   		
 										</div>
 									</div>
 									<div class="item-body">
@@ -110,6 +109,52 @@
 	    var infinite = new Waypoint.Infinite({
 	      element: $('.infinite-container')[0]
 	    });
+
+	    function subscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/subscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('subscribe OK');
+	            $('#subscribe'+id).hide();
+	            $('#unsubscribe'+id).show();
+	            $("#unsubscribe"+id).css("display","block");
+	            var subscribe_num =  $('#subscribe_num'+id).text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num ++;
+	            $('#subscribe_num'+id).text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+
+		function unsubscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/unsubscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('unsubscribe OK');
+	            $('#subscribe'+id).show();
+	            $("#subscribe"+id).css("display","block");
+	            $('#unsubscribe'+id).hide();
+	            var subscribe_num =  $('#subscribe_num'+id).text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num --;
+	            $('#subscribe_num'+id).text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
 	  </script>
 {% endblock %}
 

@@ -11,6 +11,8 @@
 {% endblock %}
 
 {% block localbody %}
+	<script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>
+
 	<div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
 		<div class="container">
 			<div class="row">
@@ -46,27 +48,18 @@
 							</li>
 							<li>
 								<div class="widget-content">
-									<span class="location"><i class="ti-heart"></i> Subscriptores: {{collaborator.user|followers_num}} </span>
+									<span class="location"><i class="ti-heart"></i> Subscriptores: <text id="subscribe_num">{{collaborator.user|followers_num}}</text></span>
 									<span class="rate"><i class="ti-email"></i>{{collaborator.user.email}}</span>
 									<span class="rate">N° de proyectos registrados:  {{collaborator.user|projects_num}} </span>
 								</div>
 
 									
 								{% if user.is_authenticated and user != collaborator.user %}
-								   									 
-									    {% if request.user|is_following:collaborator.user %}
-									     <a class="btn btn-common btn-lm" href="{% follow_url collaborator.user %}?next={{request.path}}" style="background-color: #FF9D02;  display: block;">
-									        Desuscribirme
-									     </a>
-									    {% else %}
-									      <a class="btn btn-common btn-lm" href="{% follow_url collaborator.user %}?next={{request.path}}" style="background-color: #51d1fb;  display: block;">
-									        Suscribirme
-									     </a>
-									    {% endif %}
-								   
-									
-								    
+								   		
+								   		<samp id="unsubscribe" class="btn btn-common btn-lm" style="background-color: #FF9D02;  {% if request.user|is_following:collaborator.user %}display: block;{% else %}display: none;{% endif %}" onclick="unsubscribe('{{collaborator.user.id}}');">Desuscribirme</samp>
 
+								   		<samp id="subscribe" class="btn btn-common btn-lm" style="background-color: #51d1fb;  {% if request.user|is_following:collaborator.user %}display: none;{% else %}display: block;{% endif %}" onclick="subscribe('{{collaborator.user.id}}');">Suscribirme</samp>
+								   
 								{% endif %}
 
 								<div class="clearfix"></div>
@@ -154,25 +147,19 @@
 				                    <div class="pull-left">
 				                      <div class="meta-tag">
 				                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-				                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
+				                       <span><i class="ti-heart"></i>Favorito: <span id="f{{p.id}}">{{p|project_likes}}</span></span>
 				                      </div>
 				                    </div>
 				                    <div class="pull-right">
 				                      {% if user.is_authenticated and collaborator.user != user %}
-					                      {% if p|is_user_like_project:user.id %}
-					                      <a href="{% url 'unlike_project' p.id %}">
-						                      <div class="icon">
-						                        <i class="ti-heart" style="color: red"></i>		                        
-						                      </div>
-					                      </a>
-					                      {% else %}
-					                      <a href="{% url 'like_project' p.id %}">
-						                      <div class="icon">
-						                        <i class="ti-heart"></i>		                        
-						                      </div>
-					                      </a>
-					                      {% endif %}
-
+					                      
+					                      <div class="icon" id="unlike{{p.id}}" onclick="unlike('{{p.id}}');" style="{% if not p|is_user_like_project:user.id %}display: none;{% endif %}">
+					                        <i class="ti-heart" style="color: red"></i>
+					                      </div>
+					                      <div class="icon" id="like{{p.id}}" onclick="like('{{p.id}}');" style="{% if p|is_user_like_project:user.id %}display: none;{% endif %}">
+					                        <i class="ti-heart"></i>		                        
+					                      </div>
+					                      
 				                      {% endif %}
 				                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
 				                    </div>
@@ -209,6 +196,96 @@
 	    var infinite = new Waypoint.Infinite({
 	      element: $('.infinite-container')[0]
 	    });
+
+	    function like(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/project/like/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('like  OK');
+	            $('#like'+id).hide();
+	            $('#unlike'+id).show();
+	            var likes =  $('#f'+id).text()
+	            likes = parseInt(likes);
+	            likes ++;
+	            $('#f'+id).text(likes);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+
+		function unlike(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/project/unlike/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('unlike  OK');
+	            $('#like'+id).show();
+	            $('#unlike'+id).hide();
+	            var likes =  $('#f'+id).text()
+	            likes = parseInt(likes);
+	            likes --;
+	            $('#f'+id).text(likes);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+
+		function subscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/subscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('subscribe OK');
+	            $('#subscribe').hide();
+	            $('#unsubscribe').show();
+	            $("#unsubscribe").css("display","block");
+	            var subscribe_num =  $('#subscribe_num').text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num ++;
+	            $('#subscribe_num').text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+
+		function unsubscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/unsubscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('unsubscribe OK');
+	            $('#subscribe').show();
+	            $("#subscribe").css("display","block");
+	            $('#unsubscribe').hide();
+	            var subscribe_num =  $('#subscribe_num').text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num --;
+	            $('#subscribe_num').text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
 	  </script>
 {% endblock %}
 
