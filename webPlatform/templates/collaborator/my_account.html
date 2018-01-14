@@ -3,6 +3,7 @@
 {{ form.media.css }}
 
 {% load static %}
+{% load filters %}
 
 {% block localcss %}
 	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
@@ -66,7 +67,8 @@
 									</div>
 									<div class="manager-meta">
 										<span class="location"><i class="ti-location-pin"></i> Chile</span><span class="rate"></span>
-										<span class="location">Seguidores: {{user.profile.follows.all.count}}</span><span class="rate"></span>
+										<span class="location">Subscriptores: {{user|followers_num}}</span><span class="rate"></span>
+										<span class="location">N° de proyectos registrados:  {{user|projects_num}}</span><span class="rate"></span>
 									</div>
 								</div>
 							</div>
@@ -80,7 +82,7 @@
 							</div>
 						</div>
 						<a class="btn btn-common btn-sm" href="{% url 'my_account_update' %}">Actualizar</a>
-						<a class="btn btn-common btn-sm" style="background-color: #f44336" href="{% url 'my_account_delete' %}">Eliminar</a>
+						<a class="btn btn-common btn-sm" onclick="return confirm('¿Quieres eliminar tu cuenta?');" style="background-color: #f44336" href="{% url 'my_account_delete' %}">Eliminar</a>
 					</div>
 				</div>
 			</div>

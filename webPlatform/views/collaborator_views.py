@@ -14,6 +14,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from actstream.actions import follow, unfollow
 
 ####### My account #####################################
 @login_required
@@ -85,22 +86,22 @@ def unlike_project(request, id):
     project.votes.delete(request.user.id)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-####### Follow user ####################
+####### Project lock ####################
 @login_required
 @transaction.atomic
-def follow_user(request, id):
-    user_followed = User.objects.get(pk=id)
-    user_following = User.objects.get(pk=request.user.id)
-    user_following.profile.follows.add(user_followed)
+def lock_project(request, id):
+    project = models.Project.objects.get(pk=id)
+    project.is_public = False
+    project.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-####### Unfollow user ####################
+####### Project unlock ####################
 @login_required
 @transaction.atomic
-def unfollow_user(request, id):
-    user_followed = User.objects.get(pk=id)
-    user_following = User.objects.get(pk=request.user.id)
-    user_following.profile.follows.remove(user_followed)
+def unlock_project(request, id):
+    project = models.Project.objects.get(pk=id)
+    project.is_public = True
+    project.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 ####### Own Projects
@@ -187,3 +188,4 @@ def my_project_delete(request, id):
     project.delete()
     messages.add_message(request, messages.SUCCESS, 'Proyecto borrado con éxito.', extra_tags='my_project_delete')
     return redirect('my_projects')
+

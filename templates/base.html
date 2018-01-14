@@ -67,9 +67,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-
                   <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'assets/img/logobb_full.png' %}" style="">
+                    <b><p>BeBot</p><p>Platform</p></b>
                   </a>
                 </div>
                 
@@ -142,65 +141,8 @@
       {% endblock %}  
 
       {% block localbody %}
+      
 
-      {% if messages %}
-        {% for m in messages %}
-          <div id="snackbar" class="">{{m}}</div>
-        {% endfor %}
-      {% endif %}
-
-      <div class="search-container" style="background-image: url('{% static 'assets/img/CodeBack.jpg' %}'); background-attachment: fixed; background-position: center; ">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.6); padding-top: 20px; padding-bottom: 20px;">
-              <h1 style="color: white;">Encuentra el chatbot que necesitas</h1><br><h2>Integrados con <strong>servicios cognitivos</strong> de los principales proveedores!</h2>
-              <div class="content">
-                <form id="form-search" action="{% url 'projects'%}" method="GET">
-                  <div class="row">
-                    <div class="col-md-5 col-sm-6">
-                      <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Ingrese palabras claves" name="search">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                      <div class="search-category-container">
-                        <label class="styled-select">
-                          <select class="dropdown-product selectpicker" name="service">
-                            <option value="0">Todos los servicios</option>
-                            {% for service in services %}
-                            <option value="{{service.id}}" {% if request.GET.service == service.id|stringformat:"i" %}selected{% endif %}>{{service.name}}</option>
-                            {% endfor %}
-                          </select>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                      <div class="search-category-container">
-                        <label class="styled-select">
-                          <select class="dropdown-product selectpicker" name="provider">
-                            <option value="0">Todos los proveedores</option>
-                            {% for provider in providers %}
-                            <option value="{{provider.id}}" {% if request.GET.provider == provider.id|stringformat:"i" %}selected{% endif %}>{{provider.name}}</option>
-                            {% endfor %}
-                          </select>
-                        </label>
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-1 col-sm-6">
-                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="popular-jobs">
-                <b style="color: white">Principales Búsquedas: </b>
-                <a href="{% url 'projects' %}?search=Microsoft">Microsoft Cognitive Services</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       {% endblock %}
 
       {% block footer %}

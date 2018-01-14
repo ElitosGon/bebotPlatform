@@ -26,8 +26,9 @@ urlpatterns = [
 
 	url(r'^project/like/(?P<id>\d+)/$', collaborator_views.like_project, name="like_project"),
 	url(r'^project/unlike/(?P<id>\d+)/$', collaborator_views.unlike_project, name="unlike_project"),
-	url(r'^project/follow/(?P<id>\d+)/$', collaborator_views.follow_user, name="follow_user"),
-	url(r'^project/unfollow/(?P<id>\d+)/$', collaborator_views.unfollow_user, name="unfollow_user"),
+	
+	url(r'^project/lock/(?P<id>\d+)/$', collaborator_views.lock_project, name="lock_project"),
+	url(r'^project/unlock/(?P<id>\d+)/$', collaborator_views.unlock_project, name="unlock_project"),
 
 
 	url(r'^login/$', register_views.log_in, name= "log_in"), 

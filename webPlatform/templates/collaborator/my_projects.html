@@ -3,6 +3,7 @@
 {{ form.media.css }}
 
 {% load static %}
+{% load filters %}
 
 {% block localcss %}
 	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
@@ -105,15 +106,26 @@
 			                  	<div class="col-md-12">
 			                  		<h4>
 			                  			<a href="">{{p.name}}</a>
-			                  			<a class="pull-right" href="{% url 'my_project_delete' p.id %}"">
+			                  			{% if p.use_library %}
+		                  					<a href="#">
+		                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
+		                  					</a>
+			                  			{% endif %}
+			                  			<a class="pull-right" onclick="return confirm('¿Quieres eliminar este registro?');" href="{% url 'my_project_delete' p.id %}">
 			                  				<i class="ti-trash"></i>
 			                  			</a>
 			                  			<a class="pull-right" href="{% url 'my_project_update' p.id %}" style="margin-right: 10px !important;">
 			                  				<i class="ti-pencil"></i>
 			                  			</a>
-			                  			<a class="pull-right" href="#" style="margin-right: 10px !important;">
-			                  				<i class="ti-eye"></i>
-			                  			</a>
+			                  			{% if p.is_public %}
+				                  			<a class="pull-right" href="{% url 'lock_project' p.id %}" style="margin-right: 10px !important;">
+				                  				<i class="ti-unlock"></i>
+				                  			</a>			                  			
+				                  		{% else %}
+				                  			<a class="pull-right" href="{% url 'unlock_project' p.id %}"  style="margin-right: 10px !important;">
+				                  				<i class="ti-lock"></i>
+				                  			</a>
+			                  			{% endif %}
 			                  		</h4>
 			                  	</div>
 			                  	<div class="col-md-12">
@@ -141,8 +153,7 @@
 			                    <div class="pull-left">
 			                      <div class="meta-tag">
 			                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-			                       <span><i class="ti-time"></i>Actualización: {{p.created_at.date}}</span>
-			                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
+			                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
 			                      </div>
 			                    </div>
 			                    <div class="pull-right">

@@ -12,8 +12,7 @@ from django.db.models import Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from vote.models import VoteModel
-
-
+from actstream import registry
 
 # Create your models here.
 class TypeTag(models.Model):
@@ -93,14 +92,14 @@ class Profile(models.Model):
 
 	# RELATION FIELD
 	user = models.OneToOneField(auth.models.User, related_name="profile", blank=True, null=True, on_delete=models.CASCADE)
-	follows = models.ManyToManyField(auth.models.User, related_name='followed_by', verbose_name="Seguidores", blank=True)
-
+	
 	# TIMESTAMP FIELD
 	created_at = models.DateTimeField(auto_now_add=True, blank=True, verbose_name="Fecha creación")
 	updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name="Fecha última modificación")
 
 	def __str__(self):
 		return "%d" %self.id
+
 
 @receiver(post_save, sender=auth.models.User)
 def update_user_profile(sender, instance, created, **kwargs):
@@ -115,10 +114,11 @@ class Project(VoteModel, models.Model):
 	# SIMPLE FIELD 
 	name = models.CharField(default="", max_length=100, verbose_name="Nombre", null=True, blank=True)
 	description = models.CharField(default="", max_length=600, verbose_name="Descripción", null=True, blank=True)
-	url = models.CharField(default="", max_length=600, verbose_name="Enlace a código fuente", null=True, blank=True)
+	url = models.CharField(default="", max_length=254, verbose_name="Enlace a código fuente", null=True, blank=True, unique=True)
 	is_public = models.BooleanField(verbose_name="¿Es visible?", blank=True, default=True)
 	number_likes = models.IntegerField(verbose_name="Número de likes", null=True, blank=True)
-	
+	use_library = models.BooleanField(verbose_name="¿Utiliza Librería BeBot?", blank=True, default=True)
+
 	# RELATION FIELD
 	user = models.ForeignKey(auth.models.User, related_name="proyectos", verbose_name="Dueño del registro", blank=True, null=True, on_delete=models.SET_NULL)
 	source = models.ForeignKey(Source, related_name="fuente", verbose_name="Proveedor código fuente", blank=True, null=True, on_delete=models.SET_NULL)
@@ -132,7 +132,7 @@ class Project(VoteModel, models.Model):
 	updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name="Fecha última modificación")
 
 	def __str__(self):
-		return "%d" %self.name
+		return self.name
 
 
 

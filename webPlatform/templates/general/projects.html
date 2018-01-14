@@ -3,6 +3,7 @@
 {{ form.media.css }}
 
 {% load static %}
+{% load filters %}
 
 {% block localcss %}
 
@@ -36,19 +37,31 @@
 			              <div class="content">
 			                <form method="get" action="" id="form">
 			                  <div class="row">
-			                    <div class="col-md-6 col-sm-6">
+			                    <div class="col-md-4 col-sm-6">
 			                      <div class="form-group">
-			                        <input class="form-control" type="search" placeholder="Palabra clave" name="search">
+			                        <input class="form-control" type="search" placeholder="Palabra clave" name="search" value="{{request.GET.search}}">
 			                      </div>
 			                    </div>
-			                    <div class="col-md-5 col-sm-6">
+			                    <div class="col-md-3 col-sm-6">
+			                      <div class="search-category-container">
+			                        <label class="styled-select">
+			                          <select class="dropdown-product selectpicker" name="service">
+			                            <option value="0">Todos los servicios</option>
+			                            {% for service in services %}
+			                            <option value="{{service.id}}" {% if request.GET.service == service.id|stringformat:"i" %}selected{% endif %}>{{service.name}}</option>
+			                            {% endfor %}
+			                          </select>
+			                        </label>
+			                      </div>
+			                    </div>
+			                    <div class="col-md-3 col-sm-6">
 			                      <div class="search-category-container">
 			                        <label class="styled-select">
 			                          <select class="dropdown-product selectpicker" name="provider">
 			                            <option value="0">Todos los proveedores</option>
-			                            <option value="2">IBM Watson</option>
-			                            <option value="1">Microsoft Cognitive Services</option>
-			                            <option value="3">Google</option>
+			                            {% for provider in providers %}
+			                            <option value="{{provider.id}}" {% if request.GET.provider == provider.id|stringformat:"i" %}selected{% endif %}>{{provider.name}}</option>
+			                            {% endfor %}
 			                          </select>
 			                        </label>
 			                      </div>
@@ -70,7 +83,14 @@
 				                <div class="job-list-content" style="margin-left: 0 !important;">
 				                  <div class="row">
 				                  	<div class="col-md-12">
-				                  		<h4><a href="">{{p.name}}</a></h4>
+				                  		<h4>
+				                  		<a href="">{{p.name}}</a> 
+				                  		{% if p.use_library %}
+		                  					<a href="#">
+		                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
+		                  					</a>
+			                  			{% endif %}
+			                  			</h4>
 				                  		<h5>Publicado por: <a href="{% url 'collaborator' p.user.profile.id %}">{{p.user.username}}</a></h5>
 				                  	</div>
 				                  	<div class="col-md-12">
@@ -90,6 +110,7 @@
 			                  					<span class="part-time">{{tag.name}}</span>
 			                  				{% endfor %}
 			                  			{% endif %}
+			                  			
 			                  			</h4>
 				                  	</div>
 				                  </div>
@@ -98,17 +119,25 @@
 				                    <div class="pull-left">
 				                      <div class="meta-tag">
 				                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-				                       <span><i class="ti-time"></i>Actualización: {{p.created_at.date}}</span>
-				                       <span><i class="ti-heart"></i>Favorito: {{p.vote_score}}</span>
+				                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
 				                      </div>
 				                    </div>
 				                    <div class="pull-right">
-				                      {% if user.is_authenticated %}
+				                      {% if user.is_authenticated and p.user != user %}
+					                      {% if p|is_user_like_project:user.id %}
+					                      <a href="{% url 'unlike_project' p.id %}">
+						                      <div class="icon">
+						                        <i class="ti-heart" style="color: red"></i>		                        
+						                      </div>
+					                      </a>
+					                      {% else %}
 					                      <a href="{% url 'like_project' p.id %}">
 						                      <div class="icon">
 						                        <i class="ti-heart"></i>		                        
 						                      </div>
 					                      </a>
+					                      {% endif %}
+
 				                      {% endif %}
 				                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
 				                    </div>
