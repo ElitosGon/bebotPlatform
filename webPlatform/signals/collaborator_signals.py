@@ -17,18 +17,23 @@ def model_post_save_Follow(sender, instance, **kwargs):
 		if user:
 			notify.send(user, recipient=target, verb=verb, target=user, lavel='info')
 
-@receiver(post_save, sender=models.Project)
-def model_post_save_Project(sender, instance, **kwargs):
+@receiver(pre_save, sender=models.Project)
+def model_pre_save_Project(sender, instance, **kwargs):
 	if instance.id:
 		# user.id
 		if instance.user:
-			user = User.objects.get(pk=instance.user.id)
-			project = models.Project.objects.get(pk=instance.id)
-			followers_list = followers(user)
-			verb = "El usuario %s a subido un nuevo proyecto: %s" % (user.username, instance.name)
-			if followers_list:
-				for follower in followers_list:
-					notify.send(project.user, recipient=follower, verb=verb, target=project, lavel='info')
+			old_project = None
+			if instance.id:
+				old_project = models.Project.objects.get(pk=instance.id)
+			if old_project.user == None:
+				user = User.objects.get(pk=instance.user.id)
+				project = models.Project.objects.get(pk=instance.id)
+
+				followers_list = followers(user)
+				verb = "El usuario %s a subido un nuevo proyecto: %s" % (user.username, instance.name)
+				if followers_list:
+					for follower in followers_list:
+						notify.send(user, recipient=follower, verb=verb, target=project, lavel='info')
 
 @receiver(post_delete, sender=models.Project)
 def model_post_delete_Project(sender, instance, **kwargs):
