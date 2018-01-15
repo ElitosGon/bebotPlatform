@@ -10,6 +10,7 @@ except ImportError:
 
 from actstream.models import Follow, Action
 from webPlatform import models
+from django.contrib.auth.models import User
 
 register = Library()
 
@@ -52,7 +53,12 @@ def is_user_like_project(project, user_id):
     project = models.Project.objects.get(pk=project.id)
     return project.votes.exists(user_id)
 
+@register.filter(name='class_name')
+def class_name(value):
+    return value.__class__.__name__
 
-
-
-			
+@register.filter(name='mark_all_as_read')
+def mark_all_as_read(user):
+    user = User.objects.get(pk=user.id)
+    user.notifications.mark_all_as_read()
+    return True

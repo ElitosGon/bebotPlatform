@@ -17,6 +17,7 @@ urlpatterns = [
 	url(r'^account/update/$', collaborator_views.my_account_update, name= "my_account_update"),
 	url(r'^account/change/password/$', collaborator_views.my_account_change_password, name= "my_account_change_password"), 
 	url(r'^account/delete/$', collaborator_views.my_account_delete, name= "my_account_delete"),
+	url(r'^account/notifications/$', collaborator_views.my_account_notifications, name= "my_account_notifications"),
 	
 	url(r'^account/projects/$', collaborator_views.my_projects, name= "my_projects"), 
 	url(r'^account/project/create/$', collaborator_views.my_project_create, name= "my_project_create"), 

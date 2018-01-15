@@ -12,6 +12,9 @@
 
     {% load static %}
 
+    {% load notifications_tags %}
+    
+    
     {% block localcss %}
     {% endblock %}
 
@@ -42,6 +45,26 @@
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/sky.css' %}" media="screen" />
+    <style type="text/css">
+      .my_account {
+        position:relative;
+        padding-right: 20px;
+      }
+      .my_account[data-badge]:after {
+         content:attr(data-badge);
+         position:absolute;
+         top:-10px;
+         right:10px;
+         font-size:1.5em;
+         background: #07BEFA;
+         color:white;
+         width:30px;height:30px;
+         text-align:center;
+         line-height:30px;
+         border-radius:50%;
+         box-shadow:0 0 1px #333;
+      }
+    </style>
 
     {% endblock %}
 
@@ -97,9 +120,17 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right float-right">
                     {% if user.is_authenticated %}
-                    <li class="right">
-                      <a href="{% url 'my_account' %}"><i class="ti-settings"></i>  Mi cuenta</a>
-                    </li>
+                      {% notifications_unread as unread_count %}
+                      {% if unread_count != 0 %}
+                      <li class="right my_account" data-badge="{{unread_count}}">
+                        <a href="{% url 'my_account' %}"><i class="ti-settings"></i>  Mi cuenta </a>
+                       </li>
+                      {% else %}
+                      <li class="right">
+                        <a href="{% url 'my_account' %}"><i class="ti-settings"></i>  Mi cuenta </a>
+                       </li>
+                      {% endif %}
+
                     {% endif %}
                     <li class="right">
                       {% if not request.user.is_authenticated %}

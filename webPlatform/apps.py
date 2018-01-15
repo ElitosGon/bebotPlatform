@@ -10,5 +10,7 @@ class WebplatformConfig(AppConfig):
     	from actstream import registry
     	registry.register(self.get_model('Profile'))
     	registry.register(User)
+    	import webPlatform.signals.collaborator_signals
+
         
 

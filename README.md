@@ -44,7 +44,35 @@ Pass = bebotplatform
 ```
 pip3 install -r requirements.txt
 ```
-requeriments django-activity-stream==0.6.5 - Update manager.py file 'user.is_anonymous'
+- For: django-activity-stream==0.6.5 - Update manager.py file 'user.is_anonymous'
+- For: django-notifications-hq==1.3 - Update models.py from origin
+	```
+	recipient = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, related_name='notifications', null=True, on_delete=models.CASCADE)
+   
+    actor_content_type = models.ForeignKey(ContentType, related_name='notify_actor', null=True, on_delete=models.CASCADE)
+
+    target_content_type = models.ForeignKey(ContentType, related_name='notify_target', blank=True, null=True, on_delete=models.CASCADE)
+    
+    action_object_content_type = models.ForeignKey(ContentType, blank=True, null=True,
+                                                    related_name='notify_action_object', on_delete=models.CASCADE)
+	```
+	then execute:
+	```
+		python3 manage.py makemigrations notifications
+		python3 manage.py migrate notifications
+	```
+	also update notifications_tag:
+	```
+	from django.urls import reverse
+	
+	...
+	@register.simple_tag(takes_context=True)
+	def notifications_unread(context):
+
+	...
+
+	if user.is_anonymous:
+	```
 
 ## Development Env Runserver
 ### localhost

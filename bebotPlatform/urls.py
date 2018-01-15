@@ -19,6 +19,7 @@ from django.conf import settings
 from django.urls import include, path
 from django.views.static import serve
 from django.urls import reverse
+import notifications.urls
 
 admin.autodiscover()
 
@@ -38,5 +39,6 @@ urlpatterns = [
 
     url('', include('webPlatform.urls')),
     url(r'^activity/', include('actstream.urls')),
+    url('^inbox/notifications/', include(notifications.urls, namespace='notifications')),
 
 ]
