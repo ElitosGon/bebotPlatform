@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'webPlatform',
     'vote',
     'actstream',
+    'notifications',
 ]
 
 SITE_ID = 1
@@ -170,3 +171,6 @@ ACTSTREAM_SETTINGS = {
     'USE_JSONFIELD': True,
     'GFK_FETCH_DEPTH': 1,
 }
+
+# Notification
+NOTIFICATIONS_SOFT_DELETE=True

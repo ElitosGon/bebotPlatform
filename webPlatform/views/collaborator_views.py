@@ -16,6 +16,7 @@ from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from actstream.actions import follow, unfollow
 from django.http import HttpResponse
+from notifications.signals import notify
 
 
 ####### My account #####################################
@@ -209,3 +210,28 @@ def my_project_delete(request, id):
     messages.add_message(request, messages.SUCCESS, 'Proyecto borrado con éxito.', extra_tags='my_project_delete')
     return redirect('my_projects')
 
+@login_required
+@transaction.atomic
+def my_account_notifications(request):
+    if request.method == 'GET':
+        notifications_read = request.user.notifications.filter(unread=False)
+        notifications_unread = request.user.notifications.filter(unread=True)
+        if notifications_read:
+            page = request.GET.get('page', 1)
+            paginator = Paginator(notifications_read, 10)
+
+            try:
+                notifications_read = paginator.page(page)
+            except PageNotAnInteger:
+                notifications_read = paginator.page(1)
+            except EmptyPage:
+                notifications_read = paginator.page(paginator.num_pages)
+
+        context = {
+            'notifications_read': notifications_read, 'notifications_unread': notifications_unread 
+        }
+        
+        return render(request, 'collaborator/my_account_notifications.html', context, RequestContext(request))
+    else:
+        return render(request,'error/404.html', None, RequestContext(request))
+    

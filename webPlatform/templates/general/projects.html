@@ -99,17 +99,17 @@
 				                  		<h4 class="widget-title">
 			                  			{% if p.providers.all %}
 			                  				{% for provider in p.providers.all%}
-			                  				<span class="part-time" style="background-color: #FF9D02 !important">{{provider.name}}</span>
+			                  				<span class="btn-xs" style="background-color: #FF9D02 !important">{{provider.name}}</span>
 			                  				{% endfor %}
 			                  			{% endif %}
 			                  			{% if p.services.all %}
 			                  				{% for service in p.services.all %}
-			                  				<span class="part-time" style="background-color: #94c523 !important">{{service.name}}</span>
+			                  				<span class="btn-xs" style="background-color: #94c523 !important">{{service.name}}</span>
 			                  				{% endfor %}
 			                  			{% endif %}
 			                  			{% if p.tags.all %}
 			                  				{% for tag in p.tags.all %}
-			                  					<span class="part-time">{{tag.name}}</span>
+			                  					<span class="btn-xs" style="background-color: #7f8c8d !important">{{tag.name}}</span>
 			                  				{% endfor %}
 			                  			{% endif %}
 			                  			

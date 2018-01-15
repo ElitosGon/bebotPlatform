@@ -4,6 +4,7 @@
 
 {% load static %}
 {% load filters %}
+{% load notifications_tags %}
 
 {% block localcss %}
 	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
@@ -41,6 +42,17 @@
 						<ul class="lest item">
 						<li><a class="active" href="{% url 'my_account' %}">Mi perfil</a></li>
 						<li><a href="{% url 'my_projects' %}">Mis proyectos</a></li>
+
+
+						{% notifications_unread as unread_count %}
+						<li><a href="{% url 'my_account_notifications' %}">Mis notificaciones 
+						{% if unread_count != 0 %}
+						<span class="btn-common btn-xs pull-right" style="color: white">{{unread_count}} <i class="ti-bell"></i></span>
+						{% endif %}
+						</a></li>
+						
+
+
 						<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
 						<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
 						</ul>

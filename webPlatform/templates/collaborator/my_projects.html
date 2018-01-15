@@ -4,6 +4,7 @@
 
 {% load static %}
 {% load filters %}
+{% load notifications_tags %}
 
 {% block localcss %}
 	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
@@ -43,6 +44,14 @@
 						<ul class="lest item">
 						<li><a href="{% url 'my_account' %}">Mi perfil</a></li>
 						<li><a class="active" href="{% url 'my_projects' %}">Mis proyectos</a></li>
+
+						{% notifications_unread as unread_count %}
+						<li><a href="{% url 'my_account_notifications' %}">Mis notificaciones 
+						{% if unread_count != 0 %}
+						<span class="btn-common btn-xs pull-right" style="color: white">{{unread_count}} <i class="ti-bell"></i></span>
+						{% endif %}
+						</a></li>
+						
 						<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
 						<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
 						</ul>
@@ -102,74 +111,74 @@
 				<div class="infinite-container">
 					{% for p in projects %}
 					<div class="infinite-item">
-						<div class="job-list">
-			                <div class="job-list-content" style="margin-left: 0 !important;">
-			                  <div class="row">
-			                  	<div class="col-md-12">
-			                  		<h4>
-			                  			<a href="">{{p.name}}</a>
-			                  			{% if p.use_library %}
-		                  					<a href="#">
-		                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
-		                  					</a>
-			                  			{% endif %}
-			                  			<a class="pull-right" onclick="return confirm('¿Quieres eliminar este registro?');" href="{% url 'my_project_delete' p.id %}">
-			                  				<i class="ti-trash"></i>
-			                  			</a>
-			                  			<a class="pull-right" href="{% url 'my_project_update' p.id %}" style="margin-right: 10px !important;">
-			                  				<i class="ti-pencil"></i>
-			                  			</a>
-			                  			
-			                  			<!-- Lock and unlock -->
+						<div class="job-list" style="display: block;">
+		                	<div class="job-list-content" style="margin-left: 0 !important;">
+		                  		<div class="row">
+		                  			<div class="col-md-12">
+		                  				<h4>
+		                  					<a href="">{{p.name}}</a>
+		                  					{% if p.use_library %}
+	                  						<a href="#">
+	                  						<span class="part-time" style="background-color: white !important; color: black;"> Utiliza BeBot Library<img src="{% static 'assets/img/logobbl.png' %}"></span>	
+			                  				</a>
+				                  			{% endif %}
+				                  			<a class="pull-right" onclick="return confirm('¿Quieres eliminar este registro?');" href="{% url 'my_project_delete' p.id %}">
+				                  				<i class="ti-trash"></i>
+				                  			</a>
+				                  			<a class="pull-right" href="{% url 'my_project_update' p.id %}" style="margin-right: 10px !important;">
+				                  				<i class="ti-pencil"></i>
+				                  			</a>
+		                  			
+		                  			<!-- Lock and unlock -->
 
 				                  			<span class="pull-right btn btn-success btn-sm" id="send_lock{{p.id}}" style="margin-right: 10px !important;
 				                  			{% if not p.is_public %}display: none;{% endif %}" onclick="send_lock('{{p.id}}');">
 				                  				<i class="ti-unlock"></i> Publico
 				                  			</span>	
-				                  							                  		
+			                  							                  		
 				                  			<span class="pull-right btn btn-warning btn-sm" id="send_unlock{{p.id}}" style=" margin-right: 10px !important; {% if p.is_public %}display: none;{% endif %}" onclick="send_unlock('{{p.id}}');">
 				                  				<i class="ti-lock"></i> Privado
 				                  			</span>
 
-				                  			
-			                  			<!-- End lock and unlock -->
-			                  		</h4>
-			                  	</div>
-			                  	<div class="col-md-12">
-			                  		<h4 class="widget-title">
-			                  			{% if p.providers.all %}
-			                  				{% for provider in p.providers.all%}
-			                  				<span class="part-time" style="background-color: #FF9D02 !important">{{provider.name}}</span>
-			                  				{% endfor %}
-			                  			{% endif %}
-			                  			{% if p.services.all %}
-			                  				{% for service in p.services.all %}
-			                  				<span class="part-time" style="background-color: #94c523 !important">{{service.name}}</span>
-			                  				{% endfor %}
-			                  			{% endif %}
-			                  			{% if p.tags.all %}
-			                  				{% for tag in p.tags.all %}
-			                  					<span class="part-time">{{tag.name}}</span>
-			                  				{% endfor %}
-			                  			{% endif %}
-			                  		</h4>
-			                  	</div>
-			                  </div>
-			                  <p>{{p.description}}</p>
-			                  <div class="job-tag">
-			                    <div class="pull-left">
-			                      <div class="meta-tag">
-			                       <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
-			                       <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
-			                      </div>
-			                    </div>
-			                    <div class="pull-right">
-			                      <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
-			                    </div>
-			                  </div>
-			                </div>
-			              </div>
-						</div>
+			                  			
+		                  			<!-- End lock and unlock -->
+		                  				</h4>
+		                  			</div>
+		                  			<div class="col-md-12">
+		                  				<h4 class="widget-title">
+				                  			{% if p.providers.all %}
+				                  				{% for provider in p.providers.all%}
+				                  				<span class="btn-xs" style="background-color: #FF9D02 !important">{{provider.name}}</span>
+				                  				{% endfor %}
+				                  			{% endif %}
+				                  			{% if p.services.all %}
+				                  				{% for service in p.services.all %}
+				                  				<span class="btn-xs" style="background-color: #94c523 !important">{{service.name}}</span>
+				                  				{% endfor %}
+				                  			{% endif %}
+				                  			{% if p.tags.all %}
+				                  				{% for tag in p.tags.all %}
+				                  					<span class="btn-xs" style="background-color: #7f8c8d !important">{{tag.name}}</span>
+				                  				{% endfor %}
+				                  			{% endif %}
+				                  		</h4>
+		                  			</div>
+		                  		</div>
+		                  		<p>{{p.description}}</p>
+								<div class="job-tag">
+									<div class="pull-left">
+									  <div class="meta-tag">
+									   <span><i class="ti-time"></i>Registro: {{p.created_at.date}}</span>
+									   <span><i class="ti-heart"></i>Favorito: {{p|project_likes}}</span>
+									  </div>
+									</div>
+									<div class="pull-right">
+									  <a class="btn btn-common btn-rm" href="{{p.url}}">Ver Proyecto</a>
+									</div>
+								</div>
+		                	</div>
+		              	</div>
+					</div>
 					{% endfor %}
 				</div>
 				
