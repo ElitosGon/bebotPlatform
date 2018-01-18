@@ -41,7 +41,7 @@
 	                      </div>
 	                    </div>
 	                    <div class="col-md-1 col-sm-6">
-	                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
+	                      <button type="submit" class="btn btn-search-icon" style="width: 100%;"><i class="ti-search"></i></button>
 	                    </div>
 	                  </div>
 	                </form>
@@ -92,19 +92,11 @@
 	            </div>
 			</div>
 		</div>
-	</div>
-				
-	
-	<a href="#" class="back-to-top" style="display: none;">
-		<i class="ti-arrow-up"></i>
-	</a>
+	</div>				
 
 {% endblock %}
 
-{% block localscripts %}
-	 <script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>
-	 <script type="text/javascript" src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
-	 <script type="text/javascript" src="{% static 'assets/js/infinite.js' %}"></script>	 
+{% block localscripts %} 
 	 <script>
 	    var infinite = new Waypoint.Infinite({
 	      element: $('.infinite-container')[0]

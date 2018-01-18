@@ -1,0 +1,105 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+{% load filters %}
+
+{% block localcss %}
+
+{% endblock %}
+
+{% block localbody %}
+	<!-- Start Contact Us Section -->
+      <section id="content" style="background-image: url('{% static 'assets/img/home/robot-bg.jpg' %}');">
+        <div class="container">
+          <div class="row" style="background-color: rgba(255, 255, 255, 0.9);">
+            <div class="col-md-4 col-sm-12">
+              <h2 class="medium-title">
+                Contactanos
+              </h2>
+              <div class="information">
+                <div class="contact-datails">
+                  <div class="icon">
+                    <i class="ti-location-pin"></i>
+                  </div>
+                  <div class="info">
+                    <h3>Dirección</h3>
+                    <span class="detail">Oficina Cental: Chile,Santiago</span>
+                  </div>
+                </div>                
+                <div class="contact-datails">
+                  <div class="icon">
+                    <i class="ti-mobile"></i>
+                  </div>
+                  <div class="info">
+                    <h3>Teléfono</h3>
+                    <span class="detail">Oficina Cental: +569 985 887 136</span>
+                  </div>
+                </div>
+                <div class="contact-datails">
+                  <div class="icon">
+                    <i class="ti-location-arrow"></i>
+                  </div>
+                  <div class="info">
+                    <h3>Correo</h3>
+                    <span class="detail">Soporte técnico: elias.gonzalezma@usach.cl</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+            {% if messages %}
+              {% for m in messages %}
+                <div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+              {% endfor %}
+            {% endif %}
+              <!-- Form -->
+              <form class="contact-form" data-toggle="validator" method="post" action="{% url 'contact' %}">
+              {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo" required data-error="Please enter your name">
+                          <div class="help-block with-errors"></div>
+                        </div>                    
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">                      
+                          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" required data-error="Por favor ingresa tu email" name="email">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group"> 
+                          <textarea class="form-control" placeholder="Escribe tu mensaje" rows="5" data-error="Pro favor ingresa tu mensaje" required name="message"></textarea>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <!-- Catptcha -->
+                         <script src='https://www.google.com/recaptcha/api.js'></script>
+                           <div class="g-recaptcha" data-sitekey="6LfuJEAUAAAAAJSsxCm90jzLG5_8Tra_Ie0yyVTd" style="width: 100%;"></div>
+                        <br>
+                        <button type="submit" class="btn btn-common" style="margin-bottom: 20px;">Enviar mensaje</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                        <div class="clearfix"></div>   
+                      </div>
+                    </div>
+                  </div>                     
+                </div> 
+              </form>
+            </div>            
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Us Section  -->
+{% endblock %}
+
+{% block localscripts %}
+
+{% endblock %}
+
+

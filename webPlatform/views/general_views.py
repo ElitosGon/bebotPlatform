@@ -10,6 +10,12 @@ from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from actstream import registry
+from django.core.mail import send_mail
+from templated_email import send_templated_mail, get_templated_mail
+from django.shortcuts import render, redirect
+from django.conf import settings
+import json
+import urllib
 
 ####### HOME #####################################
 def home(request):
@@ -85,9 +91,10 @@ def collaborator(request, id):
 	else:
 		return Http404
 
+############## Projects #####################
 def projects(request):
 	if request.method == 'GET':
-		projects = models.Project.objects.filter(is_public=True).order_by('-updated_at')	
+		projects = models.Project.objects.filter(is_public=True).order_by('-updated_at')    
 		if projects:
 			query = request.GET.get("search")
 			provider = request.GET.get("provider")
@@ -125,3 +132,45 @@ def projects(request):
 			return Http404
 	else:
 		return Http404
+
+####### Contact #####################################
+def contact(request):
+	if request.method == 'GET':
+		return render(request,'general/contact.html', None , RequestContext(request))
+	elif request.method == 'POST':
+		name = request.POST.get("name")
+		email = request.POST.get("email")
+		message = request.POST.get("message")
+
+		''' Begin reCAPTCHA validation '''
+		recaptcha_response = request.POST.get('g-recaptcha-response')
+		url = 'https://www.google.com/recaptcha/api/siteverify'
+		values = {
+			'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+			'response': recaptcha_response
+		}
+		data = urllib.parse.urlencode(values).encode()
+		req =  urllib.request.Request(url, data=data)
+		response = urllib.request.urlopen(req)
+		result = json.loads(response.read().decode())
+		''' End reCAPTCHA validation '''
+
+		if result['success']:
+			email_send = get_templated_mail(
+				template_name='contact_us',
+				from_email=settings.EMAIL_HOST_USER,
+				to=["elias.gonzalezma@usach.cl"],
+				context={
+					'message':message,
+					'name':name,
+					'from' : email,
+				}
+			)
+
+			email_send.send()
+			messages.add_message(request, messages.SUCCESS, 'Mensaje enviado con éxito!!.', extra_tags='contact')
+		else:
+			messages.add_message(request, messages.ERROR, 'Re-Captcha invalido.', extra_tags='contact')
+		return render(request,'general/contact.html', None , RequestContext(request))
+	else:
+		return render(request,'error/404.html', None, RequestContext(request))

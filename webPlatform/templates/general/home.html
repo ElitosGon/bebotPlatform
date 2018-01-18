@@ -70,18 +70,18 @@
 
     <title>BeBot Platform - Crear, Comparte tus projectos en Node Js de Chatbots</title>   
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+    <link rel="shortcut icon" href="{% static 'assets/img/logoBB.png' %}">
     
   </head>
   {% endblock %}
 
   {% block body %}
-  <body>  
+  <body style="background-color: white;">  
       {% block header %}
       <div class="header">    
         <section id="intro" class="section-intro">
           <div class="logo-menu">
-            <nav class="navbar navbar-default main-navigation" role="navigation" data-spy="affix" data-offset-top="50" style="background-color: #444 !important;">
+            <nav class="navbar navbar-default main-navigation" role="navigation" data-spy="affix" data-offset-top="50" style="background-color: #202020 !important;">
               <div class="container">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -98,24 +98,41 @@
                 
                 <div class="collapse navbar-collapse" id="navbar">              
                   <ul class="nav navbar-nav navbar-left float-right">
-                    <li class="right">
-                      <a href="{% url 'home' %}">
-                      Home
+                    <li>
+                      <a class="right" href="{% url 'home' %}" style="color: white !important;">
+                      Home <i class="fa fa-angle-down"></i>
                       </a>
+                      <ul class="dropdown">
+                        <li>
+                          <a href="{% url 'home' %}">
+                          BeBot platform
+                          </a>
+                        </li>
+                        <li>
+                          <a href="{% url 'contact' %}">
+                          Conctactanos
+                          </a>                          
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                   <ul class="nav navbar-nav navbar-left float-right">
-                    <li class="right">
-                      <a href="{% url 'collaborators' %}">
-                      Colaboradores
+                    <li>
+                      <a class="right" href="{% url 'projects' %}" style="color: white !important;">
+                      Chatbots <i class="fa fa-angle-down"></i>
                       </a>
-                    </li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-left float-right">
-                    <li class="right">
-                      <a href="{% url 'projects' %}">
-                      Proyectos
-                      </a>
+                      <ul class="dropdown">
+                        <li>
+                          <a href="{% url 'collaborators' %}">
+                          Colaboradores
+                          </a>
+                        </li>
+                        <li>
+                          <a href="{% url 'projects' %}">
+                          Proyectos
+                          </a>                          
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right float-right">
@@ -141,19 +158,26 @@
                     </li>
                   </ul>
                 </div>
-
               </div>
               
               <ul class="wpb-mobile-menu">
                 <li>
-                  <a class="active" href="{% url 'home' %}">Home</a>                      
+                  <a href="{% url 'home' %}">Home</a>                      
                 </li>
                 <li>
-                  <a class="active" href="{% url 'collaborators' %}">Colaboradores</a>                      
+                  <a href="{% url 'collaborators' %}">Colaboradores</a>
                 </li>
                 <li>
-                  <a class="active" href="{% url 'projects' %}">Proyectos</a>                      
+                  <a href="{% url 'projects' %}">Proyectos</a>                      
                 </li>
+                <li>
+                  <a href="{% url 'contact' %}">Contactanos</a>                      
+                </li>
+                {% if request.user.is_authenticated %}
+                <li>
+                  <a href="{% url 'my_account' %}">Mi cuenta</a>                      
+                </li>
+                {% endif %}
                 <li class="btn-m">
                   {% if not request.user.is_authenticated %}
                   <a href="{% url 'log_in' %}"><i class="ti-lock"></i>  Iniciar sesión</a>
@@ -162,7 +186,6 @@
                   {% endif %}
                 </li>          
               </ul>
-
             </nav>
           </div>
 
@@ -219,7 +242,7 @@
                     </div>
                     
                     <div class="col-md-1 col-sm-6">
-                      <button type="submit" class="btn btn-search-icon"><i class="ti-search"></i></button>
+                      <button type="submit" class="btn btn-search-icon" style="width: 100%;"><i class="ti-search"></i></button>
                     </div>
                   </div>
                 </form>
@@ -228,6 +251,90 @@
                 <b style="color: white">Principales Búsquedas: </b>
                 <a href="{% url 'projects' %}?search=Microsoft">Microsoft Cognitive Services</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about section">
+        <div class="container">
+          <div class="row">          
+            <div class="col-md-6 col-sm-12">
+              <img src="{% static 'assets/img/home/Bots-v2-2.png' %}" alt="">              
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="about-content" style="">
+                <h2 class="medium-title">BeBot Platform</h2>
+                <p class="desc">Es una plataforma de difusión de software colaborativo para la creación de Chatbots donde podrás compartir tus proyectos con el resto de la comunidad. Permitiendote buscar proyectos que más se adapten a tus necesidad o a las necesidades de tu negocio.</p>
+                <p>Buscamos ser un punto de encuentro entre desarrolladores de Chatbots que utilicen kits de desarrollo de software ofrecidos por los principales proveedores como lo son Microsoft e IBM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="service-main" class="section" style="background-image: url('{% static 'assets/img/home/robot-bg.jpg' %}'">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4" style="background-color: rgba(255, 255, 255, 0.9);">
+                    <div class="service-item">
+                        <div class="icon-wrapper">
+                        <i class="ti-search">
+                        </i>
+                        </div>
+                        <h2>
+                        Encuentra tu proyecto Chatbot
+                        </h2>
+                        <p>
+                        Ofrecemos un buscador que te permitirá encontrar los proyectos de Chatbots que más se adapten a tus necesidades o a las necesidades de tu negocio. Filtra por tipo de proveedor y/o tipo de servicio cognitivo utilizado.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" style="background-color: rgba(255, 255, 255, 0.9);">
+                    <div class="service-item">
+                        <div class="icon-wrapper">
+                        <i class="ti-world">
+                        </i>
+                        </div>
+                        <h2>
+                        Comparte tus proyectos
+                        </h2>
+                        <p>
+                        Además permite que la comunidad comparta sus propios proyectos de Chatbots que utilicen servicios cognitivos, para que otros usuarios pueden conocer de estos y si es posible utilizar los códigos como base para un nuevo desarrollo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" style="background-color: rgba(255, 255, 255, 0.9);">
+                    <div class="service-item">
+                        <div class="icon-wrapper">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h2>
+                        Códigos para iniciar
+                        </h2>
+                        <p>
+                        De manera oficial BeBot Platform comparte proyectos con la comunidad que utilizan la librería BeBot desarrollada para node js, que permite conectar los principales servicios cognitivos a tus chatbots desarrollados en node js.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <div class="about section">
+        <div class="container">
+          <div class="row">          
+            <div class="col-md-6 col-sm-12">
+              <div class="about-content" style="">
+                <h2 class="widget-title">Beneficios</h2>
+                <p><i class="fa fa-check fa-2x" aria-hidden="true" style="color: #1fa67a;"></i> Ahorra tiempo en el desarrollo de tu proyecto, utiliza y comparte tus ideas con la comunidad, juntos creemos Chatbots más inteligentes.</p>
+                <p><i class="fa fa-check fa-2x" aria-hidden="true" style="color: #1fa67a;"></i> Mantente al tanto sobre las últimas tecnologías cognitivas y como integrarlas a tus proyectos de Chatbots.</p>
+                <p><i class="fa fa-check fa-2x" aria-hidden="true" style="color: #1fa67a;"></i> Fomenta la colaboración de otros miembros de la comunidad en tus proyectos de Chatbots.</p>
+                <p><i class="fa fa-check fa-2x" aria-hidden="true" style="color: #1fa67a;"></i> Da conocer de tu trabajo con Chatbots a quienes los necesitan, y juntos formemos soluciones increíbles.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <img src="{% static 'assets/img/home/chatbots.png' %}" alt="">              
             </div>
           </div>
         </div>
@@ -242,17 +349,21 @@
         				<div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="widget">
                     <h3 class="block-title">
-                      <p>BeBot</p>
-                      <p>Platform</p>
+                      <img src="{% static 'assets/img/logobb_full.png' %}" style="">
                     </h3>
                     <div class="textwidget">
-                      <p>Texto descripción.</p>
+                      <p>Es una plataforma de difusión de software colaborativo para la creación de Chatbots donde podrás compartir tus proyectos con el resto de la comunidad. Permitiendote buscar proyectos que más se adapten a tus necesidad o a las necesidades de tu negocio.</p>
                     </div>
                   </div>
                 </div>
         				<div class="col-md-3 col-sm-6 col-xs-12">
         					<div class="widget">
         						<h3 class="block-title">Accesos rápidos</h3>
+                    <ul class="menu">
+                      <li><a href="{% url 'collaborators' %}">Colaboradores</a></li>
+                      <li><a href="{% url 'projects' %}">Proyectos</a></li>
+                      <li><a href="{% url 'contact' %}">Contactanos</a></li>
+                    </ul>
         					</div>
         				</div>
         				<div class="col-md-3 col-sm-6 col-xs-12">
@@ -262,15 +373,27 @@
         				</div>
         				<div class="col-md-3 col-sm-6 col-xs-12">
         					<div class="widget">
-        						<h3 class="block-title">Siguenos en</h3>
-                    <div class="bottom-social-icons social-icon">  
-                      <a class="twitter" href="#"><i class="ti-twitter-alt"></i></a>
-                      <a class="facebook" href="#"><i class="ti-facebook"></i></a>
-                      <a class="youtube" href="#"><i class="ti-youtube"></i></a>
-                      <a class="dribble" href="#"><i class="ti-dribbble"></i></a>
-                      <a class="linkedin" href="#"><i class="ti-linkedin"></i></a>
-                    </div>	
-        					</div>
+                    <div class="contact-datails">
+                      <div class="icon">
+                        <i class="ti-mobile"></i>
+                      </div>
+                      <div class="info">
+                        <h3>Teléfono</h3>
+                        <span class="detail">Oficina Cental</span>
+                        <h4>+569 985 887 136</h4>
+                      </div>
+                    </div>
+                   <div class="contact-datails">
+                      <div class="icon">
+                        <i class="ti-location-arrow"></i>
+                      </div>
+                      <div class="info">
+                        <h3>Correo</h3>
+                        <span class="detail"><p>Usuarios Soporte Técnico</p></span>
+                        <h4>elias.gonzalezma@usach.cl</h4>
+                      </div>
+                    </div>
+                   </div> 
         				</div>
         			</div>
         		</div>
@@ -316,7 +439,8 @@
       
     {% block scripts %}
      <!-- Main JS  -->
-  <script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>      
+  <script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script> 
+  <script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>         
   <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>    
   <script type="text/javascript" src="{% static 'assets/js/material.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'assets/js/material-kit.js' %}"></script>
@@ -330,9 +454,12 @@
   <script type="text/javascript" src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'assets/js/form-validator.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'assets/js/contact-form-script.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+  <script type="text/javascript" src="{% static 'assets/js/infinite.js' %}"></script>
     {% endblock %}
 
     {% block localscripts %}
+
     {% endblock %}  
 
   </body>
