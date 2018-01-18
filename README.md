@@ -1,4 +1,4 @@
-# BeBot Platform project
+# BeBot Platform project (v1.0)
 The following describes the characteristics of the project in order to facilitate the integration of the BeBotPlatform project in a Development or Production environment.
 
 ## General characteristics
