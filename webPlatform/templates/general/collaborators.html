@@ -1,0 +1,153 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+{% load activity_tags %}
+{% load filters %}
+
+{% block localcss %}
+
+{% endblock %}
+
+{% block localbody %}
+	<div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Colaboradores</h2>
+						<ol class="breadcrumb">
+							<li><a href="{% url 'home' %}"><i class="ti-home"></i> Home</a></li>
+							<li class="current">Colaboradores</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="container">
+			<h5 class="widget-title">Buscar colaborador</h5>
+			<div class="row">
+				<div class="col-md-12">
+	              <div class="content">
+	                <form method="get" action="" id="form">
+	                  <div class="row">
+	                    <div class="col-md-11 col-sm-6">
+	                      <div class="form-group">
+	                        <input class="form-control" type="search" placeholder="Palabra clave" name="search">
+	                      </div>
+	                    </div>
+	                    <div class="col-md-1 col-sm-6">
+	                      <button type="submit" class="btn btn-search-icon" style="width: 100%;"><i class="ti-search"></i></button>
+	                    </div>
+	                  </div>
+	                </form>
+	              </div>
+
+	              <div class="infinite-container">
+					{% for c in collaborators %}
+						<dir class="infinite-item">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="manager-resumes-item">
+									<div class="manager-content">
+										<a href="{% url 'collaborator' c.pk %}"><img class="resume-thumb" src="{{c.avatar.url}}" alt=""></a>
+										<div class="manager-info">
+											<div class="manager-name">
+												<h4><a href="{% url 'collaborator' c.pk %}">{{c.user.username}}</a></h4>
+												<h5>{{c.user.first_name}} {{c.user.last_name}}</h5>
+											</div>
+											<div class="manager-meta">
+												<span class="rate">Subscriptores: <text id="subscribe_num{{c.user.id}}">{{c.user|followers_num}}</text></span>
+											
+											{% if user.is_authenticated and user != c.user %}
+												<samp id="unsubscribe{{c.user.id}}" class="btn btn-common" style="background-color: #FF9D02;  {% if request.user|is_following:c.user %}display: block;{% else %}display: none;{% endif %}" onclick="unsubscribe('{{c.user.id}}');">Desuscribirme</samp>
+
+								   				<samp id="subscribe{{c.user.id}}" class="btn btn-common" style="background-color: #51d1fb;  {% if request.user|is_following:c.user %}display: none;{% else %}display: block;{% endif %}" onclick="subscribe('{{c.user.id}}');">Suscribirme</samp>
+								   			{% endif %}
+												
+
+											</div>
+								   		
+										</div>
+									</div>
+									<div class="item-body">
+									<i>"{{c.description}}."</i>
+									<p><span class="rate">
+										<strong>N° de proyectos registrados:  {{c.user|projects_num}}</strong>
+										</span></p>
+									</div>
+								</div>
+							</div>
+						</dir>
+					{% endfor %}
+					</div>
+
+					{% if collaborators.has_next %}
+						  <a class="infinite-more-link" href="?page={{ collaborators.next_page_number }}">More</a>
+					{% endif %}
+					
+	            </div>
+			</div>
+		</div>
+	</div>				
+
+{% endblock %}
+
+{% block localscripts %} 
+	 <script>
+	    var infinite = new Waypoint.Infinite({
+	      element: $('.infinite-container')[0]
+	    });
+
+	    function subscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/subscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('subscribe OK');
+	            $('#subscribe'+id).hide();
+	            $('#unsubscribe'+id).show();
+	            $("#unsubscribe"+id).css("display","block");
+	            var subscribe_num =  $('#subscribe_num'+id).text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num ++;
+	            $('#subscribe_num'+id).text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+
+		function unsubscribe(id){
+			$.ajax({
+	        type: 'POST',
+	        url: "http://{{request.META.HTTP_HOST}}/account/unsubscribe/"+id+"/",
+	        data: 'csrfmiddlewaretoken={{csrf_token}}',
+			dataType: "html",
+	        success: function (result) {
+	            console.log(result);
+	            console.log('unsubscribe OK');
+	            $('#subscribe'+id).show();
+	            $("#subscribe"+id).css("display","block");
+	            $('#unsubscribe'+id).hide();
+	            var subscribe_num =  $('#subscribe_num'+id).text()
+	            subscribe_num = parseInt(subscribe_num);
+	            subscribe_num --;
+	            $('#subscribe_num'+id).text(subscribe_num);
+	        },
+	        error: function (request, status, error) {
+	            console.log(error);
+	        }
+	    });
+		};
+	  </script>
+{% endblock %}
+
+

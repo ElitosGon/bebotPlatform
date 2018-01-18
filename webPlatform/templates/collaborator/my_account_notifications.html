@@ -1,0 +1,205 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+{% load filters %}
+{% load notifications_tags %}
+
+{% block localcss %}
+	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
+
+{% endblock %}
+
+{% block localbody %}
+	 <div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Mi cuenta</h2>
+						<ol class="breadcrumb">
+							<li>
+								<a href="{% url 'home' %}"><i class="ti-home"></i> Home</a>
+							</li>
+							<li class="current">Mi cuenta</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<!-- Laterar nav -->
+			<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="right-sideabr">
+					<div class="inner-box">
+						<h4 class="widget-title">Mi cuenta</h4>
+						<ul class="lest item">
+						<li><a href="{% url 'my_account' %}">Mi perfil</a></li>
+						<li><a href="{% url 'my_projects' %}">Mis proyectos</a></li>
+						
+						{% notifications_unread as unread_count %}
+						<li><a  class="active" href="{% url 'my_account_notifications' %}">Mis notificaciones 
+						{% if unread_count != 0 %}
+						<span class="btn-common btn-xs pull-right" style="color: white">{{unread_count}} <i class="ti-bell"></i></span>
+						{% endif %}
+						</a></li>
+						
+						<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
+						<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<div class="job-alerts-item notification">
+					<h3 class="alerts-title">Notificaciones</h3>
+							{% if messages %}
+								{% for m in messages %}
+									<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+								{% endfor %}
+							{% endif %}
+
+							<h4 class="widget-title"> Nuevas notificaciones </h4>
+							{% for n_unread in notifications_unread %}
+							
+							<div class="">
+									<div class="notification-item">
+										<div class="thums">
+										{% with n_unread.target|class_name as class %}
+											{% if class == 'Project' %}
+												<img src="{{n_unread.target.user.profile.avatar.url}}" alt="">
+											{% else %}
+												<img src="{% static 'assets/img/notifications/notification.png' %}" alt="">
+											{% endif %}
+										{% endwith %}
+							 			</div>
+										<div class="text-left">
+											{% with n_unread.target|class_name as class %}
+											    {% if class == 'Project' %}
+											    	<h5>¡Nuevo proyecto! <a class="pull-right btn btn-common btn-xs" href="{{n_unread.target.url}}">Ver Ahora</a></h5>
+											    	<p>{{n_unread.verb}}.</p>
+													<div class="">
+														{% if n_unread.target.providers.all %}
+							                  				{% for provider in n_unread.target.providers.all %}
+							                  				<span class="btn-xs" style="background-color: #FF9D02 !important">{{provider.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+							                  			{% if n_unread.target.services.all %}
+							                  				{% for service in n_unread.target.services.all %}
+							                  				<span class="btn-xs" style="background-color: #94c523 !important">{{service.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+							                  			{% if n_unread.target.tags.all %}
+							                  				{% for tag in n_unread.target.tags.all %}
+							                  					<span class="btn-xs" style="background-color: #7f8c8d !important">{{tag.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+													</div>
+													<a href="{% url 'collaborator' n_unread.target.user.profile.id %}">
+														<span class="time"><i class="ti-user"></i>{{n_unread.target.user.username}}</span>
+													</a>
+													<span class="time"><i class="ti-time"></i>{{n_unread.timestamp}}</span>
+											    {% elif  class == 'User' %}
+											    	<h5>¡Tienes un nuevo seguidor!</h5>
+											    	<p>{{n_unread.verb}}.</p>
+											    	<a href="{% url 'collaborator' n_unread.target.profile.id %}">
+														<span class="time"><i class="ti-user"></i>{{n_unread.target.username}}</span>
+													</a>
+													<span class="time"><i class="ti-time"></i>{{n_unread.timestamp}}</span>
+											    {% endif %}
+										    {% endwith %}
+											
+										</div>
+									</div>	
+							</div>
+							
+							{% endfor %}
+
+							<h4 class="widget-title"> Notificaciones anteriores </h4>
+							
+							<div class="infinite-container">
+								{% for n in notifications_read %}
+								<div class="infinite-item">
+									<div class="notification-item">
+										<div class="thums">
+										{% with n.target|class_name as class %}
+											{% if class == 'Project' %}
+												<img src="{{n.target.user.profile.avatar.url}}" alt="">
+											{% else %}
+												<img src="{% static 'assets/img/notifications/notification.png' %}" alt="">
+											{% endif %}
+										{% endwith %}
+							 			</div>
+										<div class="text-left">
+											{% with n.target|class_name as class %}
+											    {% if class == 'Project' %}
+											    	<h5>¡Nuevo proyecto! <a class="pull-right btn btn-common btn-xs" href="{{n.target.url}}">Ver Ahora</a></h5>
+											    	<p>{{n.verb}}.</p>
+													<div class="">
+														{% if n.target.providers.all %}
+							                  				{% for provider in n.target.providers.all %}
+							                  				<span class="btn-xs" style="background-color: #FF9D02 !important">{{provider.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+							                  			{% if n.target.services.all %}
+							                  				{% for service in n.target.services.all %}
+							                  				<span class="btn-xs" style="background-color: #94c523 !important">{{service.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+							                  			{% if n.target.tags.all %}
+							                  				{% for tag in n.target.tags.all %}
+							                  					<span class="btn-xs" style="background-color: #7f8c8d !important">{{tag.name}}</span>
+							                  				{% endfor %}
+							                  			{% endif %}
+													</div>
+													<a href="{% url 'collaborator' n.target.user.profile.id %}">
+														<span class="time"><i class="ti-user"></i>{{n.target.user.username}}</span>
+													</a>
+													<span class="time"><i class="ti-time"></i>{{n.timestamp}}</span>
+											    {% elif  class == 'User' %}
+											    	<h5>¡Tienes un nuevo seguidor!</h5>
+											    	<p>{{n.verb}}.</p>
+											    	<a href="{% url 'collaborator' n.target.profile.id %}">
+														<span class="time"><i class="ti-user"></i>{{n.target.username}}</span>
+													</a>
+													<span class="time"><i class="ti-time"></i>{{n.timestamp}}</span>
+											    {% endif %}
+										    {% endwith %}
+											
+										</div>
+									</div>	
+								</div>
+								{% endfor %}
+							</div>							
+
+							{% if notifications_read.has_next %}
+							    <a class="infinite-more-link" href="?page={{ notifications_read.next_page_number }}">More</a>
+							 {% endif %}
+						
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12 col-sm-12">
+				<span><p style="visibility: hidden;">Hola mundo</p></span>
+			</div>
+		</div>
+	</div>
+
+	<text style="visibility: hidden;">{{ user|mark_all_as_read }}</text>
+{% endblock %}
+
+{% block localscripts %}
+	<script>
+		var infinite = new Waypoint.Infinite({
+			element: $('.infinite-container')[0]
+		});
+	</script>
+{% endblock %}
+
+

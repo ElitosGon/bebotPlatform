@@ -1,0 +1,143 @@
+{% extends "general/home.html" %}
+
+{{ form.media.css }}
+
+{% load static %}
+{% load notifications_tags %}
+
+{% block localcss %}
+	<link rel="stylesheet" href="{% static 'assets/css/color-switcher.css' %}" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% endblock %}
+
+{% block localbody %}
+	 <div class="page-header" style="background: url({% static 'assets/img/banner1.jpg' %});">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb-wrapper">
+						<h2 class="product-title">Mi cuenta</h2>
+						<ol class="breadcrumb">
+							<li>
+								<a href="{% url 'home' %}"><i class="ti-home"></i> Home</a>
+							</li>
+							<li class="current">Mi cuenta</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<!-- Laterar nav -->
+			<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="right-sideabr">
+					<div class="inner-box">
+						<h4 class="widget-title">Mi cuenta</h4>
+						<ul class="lest item">
+						<li><a href="{% url 'my_account' %}">Mi perfil</a></li>
+						<li><a class="active" href="{% url 'my_projects' %}">Mis proyectos</a></li>
+
+						{% notifications_unread as unread_count %}
+						<li><a href="{% url 'my_account_notifications' %}">Mis notificaciones 
+						{% if unread_count != 0 %}
+						<span class="btn-common btn-xs pull-right" style="color: white">{{unread_count}} <i class="ti-bell"></i></span>
+						{% endif %}
+						</a></li>
+						
+						<li><a href="{% url 'my_account_change_password' %}">Cambiar contraseña</a></li>
+						<li><a href="{% url 'log_out' %}">Cerrar sesión</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				
+				{% if messages %}
+					{% for m in messages %}
+						<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+					{% endfor %}
+				{% endif %}
+
+				<div class="job-alerts-item">
+						<h3 class="alerts-title">Registrar proyecto</h3>
+						{% if messages %}
+							{% for m in messages %}
+								<div class="alert {% if m.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-danger{% endif%} {% if m.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% endif%}">{{m}}</div>
+							{% endfor %}
+						{% endif %}
+						{% if form.errors %}
+							<div class="alert alert-danger">
+								{{form.errors}}
+							</div>
+						{% endif %}
+						<form class="form" method="post">
+							{% csrf_token %}
+							<div class="form-group is-empty">
+								<label class="control-label" for="textarea">Nombre proyecto</label>
+							 	{{form.name}}
+								<span class="material-input"></span>
+								<span class="material-input"></span>
+							</div>
+							<div class="form-group is-empty">
+								<label class="control-label" for="textarea">Descripción</label>
+								{{form.description}}
+								<span class="material-input"></span>
+								<span class="material-input"></span>
+							</div>
+							<div class="form-group is-empty">
+								<label class="control-label" for="textarea">Código Fuente (Enlace)</label>
+								{{form.url}}
+								<span class="material-input"></span>
+								<span class="material-input"></span>
+							</div>
+							<div class="form-group is-empty">
+								<label class="control-label" for="textarea">¿Deseas que este proyecto este visible? <samp class="pull-rigth">{{form.is_public}}</samp></label>
+								
+								<span class="material-input"></span>
+								<span class="material-input"></span>
+							</div>
+							<div class="form-group is-empty">
+								<label class="control-label" for="textarea">¿Utilizas BeBot Library en tu proyecto? <samp class="pull-rigth">{{form.use_library}}</samp></label>
+								
+								<span class="material-input"></span>
+								<span class="material-input"></span>
+							</div>
+							<label class="control-label" for="textarea">Proveedor de código fuente</label>	
+							<div class="search-category-container">
+								{{form.source}}
+							</div>
+							<label class="control-label" for="textarea">Proveedor de servicio</label>	
+							<div class="search-category-container">
+								{{form.providers}}
+							</div>
+							<label class="control-label" for="textarea">Servicios incluidos</label>	
+							<div class="search-category-container">
+								{{form.services}}
+							</div>
+							<label class="control-label" for="textarea">Etiquetas</label>
+							<div class="search-category-container">
+								{{form.tags}}
+							</div>
+							<br>
+							<button class="btn btn-common log-btn pull-rigth" name="event" value="my_project_create" type="sum">Crear Registro</button>
+						</form>
+					</div>	
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block localscripts %}
+
+{% endblock %}
+
+

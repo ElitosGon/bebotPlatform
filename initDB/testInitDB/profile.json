@@ -1,0 +1,167 @@
+[
+{
+  "model": "webPlatform.profile",
+  "pk": 13,
+  "fields": {
+    "description": "Soy un tipo topo",
+    "avatar": "documents/avatar/2018/01/10/bb8.jpeg",
+    "user": 1,
+    "created_at": "2018-01-10T12:36:21.325",
+    "updated_at": "2018-01-11T14:13:22.498"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 15,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades para poner en pr\u00e1ctica los conocimientos adquiridos. Me gustan los desaf\u00edos que me hacen mejor persona y/o profesional, me considero pro-activo, trabajador y autodidacta, me gusta trabajar en equipo y con personas de las cuales pueda aprender. Amo el desaf\u00edo que presenta el solucionar un problema, el proceso que involucra pensar, conocer y explorar. Con respecto a el trabajo, valoro que conf\u00eden en m\u00ed, y que inviertan en mi formaci\u00f3n como profe",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 16,
+    "created_at": "2018-01-10T20:59:05.134",
+    "updated_at": "2018-01-11T14:13:22.740"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 16,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 2,
+    "created_at": "2018-01-11T14:13:22.554",
+    "updated_at": "2018-01-11T14:13:22.554"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 17,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 3,
+    "created_at": "2018-01-11T14:13:22.571",
+    "updated_at": "2018-01-11T14:13:22.581"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 18,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 4,
+    "created_at": "2018-01-11T14:13:22.592",
+    "updated_at": "2018-01-11T14:13:22.595"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 19,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 5,
+    "created_at": "2018-01-11T14:13:22.628",
+    "updated_at": "2018-01-11T14:13:22.629"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 20,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 6,
+    "created_at": "2018-01-11T14:13:22.638",
+    "updated_at": "2018-01-11T14:13:22.639"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 21,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 7,
+    "created_at": "2018-01-11T14:13:22.647",
+    "updated_at": "2018-01-11T14:13:22.649"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 22,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 8,
+    "created_at": "2018-01-11T14:13:22.657",
+    "updated_at": "2018-01-11T14:13:22.658"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 23,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 9,
+    "created_at": "2018-01-11T14:13:22.666",
+    "updated_at": "2018-01-11T14:13:22.668"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 24,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 10,
+    "created_at": "2018-01-11T14:13:22.676",
+    "updated_at": "2018-01-11T14:13:22.678"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 25,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 11,
+    "created_at": "2018-01-11T14:13:22.700",
+    "updated_at": "2018-01-11T14:13:22.700"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 26,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 12,
+    "created_at": "2018-01-11T14:13:22.707",
+    "updated_at": "2018-01-11T14:13:22.710"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 27,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 13,
+    "created_at": "2018-01-11T14:13:22.719",
+    "updated_at": "2018-01-11T14:13:22.721"
+  }
+},
+{
+  "model": "webPlatform.profile",
+  "pk": 28,
+  "fields": {
+    "description": "Actualmente me encuentro estudiando en la Universidad de Santiago Ingenier\u00eda Civil en Inform\u00e1tica, desde que ingres\u00e9 a estudiar he buscado oportunidades",
+    "avatar": "documents/avatar/2018/01/10/BB8_iK6oIKH.png",
+    "user": 14,
+    "created_at": "2018-01-11T14:13:22.731",
+    "updated_at": "2018-01-11T14:13:22.732"
+  }
+}
+]
