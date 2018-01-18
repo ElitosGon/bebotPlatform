@@ -1,0 +1,15 @@
+{% block subject %}BeBot platform | Contactanos | {{name}}{% endblock %}
+{% block html %}
+Estimado Elías: 
+<p>
+Le informamos que se han contactado contigo mediante BeBot platform. 
+</p> 
+
+<p>Nombre: {{name}}</p> 
+<p>Correo: {{from}}</p> 
+
+<p>{{message}}.</p> 
+
+<p>Atte,</p>
+<p>Equipo BeBot platform</p>
+{% endblock %}

@@ -67,9 +67,7 @@
 											<label for="rememberme" class="rememberme">
 											<input name="rememberme" id="rememberme" value="forever" type="checkbox">
 											<span class="checkbox-material">
-												<span class="check">
-													
-												</span>
+												
 											</span> Recuerdame
 											</label>
 										</div>
@@ -177,31 +175,11 @@
 			</div>
 		</div>
 	</div>
-	
-	<a href="#" class="back-to-top" style="display: none;">
-		<i class="ti-arrow-up"></i>
-	</a>
+
 {% endblock %}
 
 {% block localscripts %}
-	<script type="text/javascript" src="{% static 'assets/js/jquery-min.js' %}"></script>   
-	<script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>    
-	<script type="text/javascript">
-		function readURL(input) {
-	        if (input.files && input.files[0]) {
-	            var reader = new FileReader();
-
-	            reader.onload = function (e) {
-	                $('#avatar')
-	                    .attr('src', e.target.result)
-	                    .width(240)
-	                    .height(240);
-	            };
-
-	            reader.readAsDataURL(input.files[0]);
-	        }
-	    }
-	</script>
+	
 {% endblock %}
 
 

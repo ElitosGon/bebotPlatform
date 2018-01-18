@@ -14,6 +14,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from webPlatform.forms import register_forms
 from django.urls import reverse
 from django.db import transaction
+import json
+import urllib
 
 ####### Login #####################################
 @transaction.atomic
@@ -80,7 +82,21 @@ def log_in(request):
 		if request.POST['event'] == 'signup':
 			# BEGIN SIGNUP
 			form_sign_up = register_forms.SignUpForm(request.POST, request.FILES or None)
-			if form_sign_up.is_valid():
+			
+			''' Begin reCAPTCHA validation '''
+			recaptcha_response = request.POST.get('g-recaptcha-response')
+			url = 'https://www.google.com/recaptcha/api/siteverify'
+			values = {
+				'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+				'response': recaptcha_response
+			}
+			data = urllib.parse.urlencode(values).encode()
+			req =  urllib.request.Request(url, data=data)
+			response = urllib.request.urlopen(req)
+			result = json.loads(response.read().decode())
+			''' End reCAPTCHA validation '''
+
+			if form_sign_up.is_valid() and result:
 				try:
 					user = form_sign_up.save()
 					user.refresh_from_db()
@@ -98,6 +114,9 @@ def log_in(request):
 				except:
 					messages.add_message(request, messages.ERROR, "Problema al crear usuario.", extra_tags='signup')
 			else:
+				if not result:
+					messages.add_message(request, messages.ERROR, 'Re-Captcha invalido.', extra_tags='contact')
+				
 				messages.add_message(request, messages.ERROR, "Problema al crear usuario.", extra_tags='signup')
 			# END SIGNUP
 

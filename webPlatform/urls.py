@@ -10,6 +10,7 @@ urlpatterns = [
 	url(r'^collaborators/$', general_views.collaborators, name= "collaborators"), 
 	url(r'^collaborator/(?P<id>\d+)/$', general_views.collaborator, name= "collaborator"), 
 	url(r'^projects/$', general_views.projects, name= "projects"), 
+	url(r'^contact/$', general_views.contact, name= "contact"), 
 
 
 	# Collaborator
